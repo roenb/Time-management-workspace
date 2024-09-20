@@ -26,6 +26,28 @@ Because we know that at minimum, this human realm is run using machinery that us
 
 Now rate what we accomplished and start a new timer.
 """
+def add_task(task_name, parent_task=None):
+    tasks_data = load_tasks()
+
+    new_task = {
+        "title": task_name,
+        "description": "",
+        "subtasks": [],
+        "completed": False,
+        "acceptance_criteria": [],
+        "test_cases": [],
+        "ascii_diagram": "",
+        "additional_info": "",
+        "related_tasks": []  # Store relationships here
+    }
+
+    if parent_task:
+        parent_task['subtasks'].append(new_task)
+    else:
+        tasks_data['tasks'].append(new_task)
+    
+    save_tasks(tasks_data)
+    return new_task
 
 # In-memory data storage for demonstration and analysis
 user_data = {
