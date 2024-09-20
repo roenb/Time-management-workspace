@@ -1,0 +1,14 @@
+Flask>=2.0.0
+Werkzeug>=2.0.0
+requests>=2.25.1
+matplotlib                   # For performance charts
+plyer                        # Cross-platform notifications (optional)
+pandas                       # Data handling
+scikit-learn                 # Machine learning for future enhancements
+jsonschema                   # JSON validation
+pyttsx3                      # Text-to-speech for voice alerts
+Pillow                       # Image handling for motivational images
+SpeechRecognition  # For the speech-to-text capability
+pyaudio            # For microphone input
+python-docx
+pygame                       # For playing sounds

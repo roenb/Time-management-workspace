@@ -1,0 +1,21 @@
+{
+    "time_tracking_interval": 25,
+    "break_interval": 5,
+    "data_storage": "json",
+    "motivation_images": true,
+    "llm_api": {
+        "url": "http://localhost:1234/v1/chat/completions",
+        "model": "GPT4All-Community/Meta-Llama-3.1-8B-Instruct-128k-GGUF",
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 40,
+        "max_tokens": 500,
+        "system_message": "You are an AI assistant capable of generating structured outputs, providing insights, and offering creative solutions."
+    },
+    "hashtag_system_messages": {
+        "#taskgen": "Generate tasks and subtasks based on the user's input. Format as escaped JSON with 'task', 'subtasks', and 'notes'.",
+        "#reflection": "Analyze the user's performance and provide suggestions for improvement.",
+        "#research": "Conduct research on the user's request and provide a structured response with key findings.",
+        "#goalsetting": "Help the user set actionable goals based on their input, including milestones and timelines."
+    }
+}

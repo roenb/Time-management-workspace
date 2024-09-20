@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Dashboard</title>
+
+    <!-- Include favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='media/logo-crisp-large.ico') }}" type="image/x-icon">
+
+    <!-- Bootstrap and FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Dynamic styling for the countdown timer */
+        #timer-output {
+            font-size: 1.5rem;
+            transition: font-size 0.5s;
+        }
+        #timer-output.running {
+            font-size: 3rem;
+            color: #FF6347;
+            text-align: center;
+        }
+
+        /* Collapsible section styling */
+        .accordion .card-header {
+            cursor: pointer;
+        }
+
+        /* Scrollable task list */
+        #task-list {
+            max-height: 200px;
+            overflow-y: scroll;
+        }
+
+        /* Styling for the checkbox and its label */
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-checkbox input[type="checkbox"] {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        .custom-checkbox label {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* Styling for icons */
+        .btn-icon {
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        /* Increase the width of the timer buttons */
+        .btn-success, .btn-danger {
+            width: 100%;  /* Make the buttons span the width of their container */
+            font-size: 1.2rem;  /* Adjust font size for larger buttons */
+            padding: 10px 0;    /* Add padding to make the button more prominent */
+        }
+
+        /* Resize the Add Task button to match input sizes */
+        .btn-primary {
+            width: 100%; /* Make this button also span its container */
+            font-size: 1rem;  /* Adjust font size */
+            padding: 8px 0;
+        }
+
+        /* Reduce the size of all buttons/icons to match input sizes */
+        button i {
+            font-size: 1rem;  /* Reduce icon size */
+        }
+
+        button {
+            font-size: 1rem;  /* Reduce button text size */
+            padding: 8px 15px; /* Adjust padding to match input sizes */
+        }
+
+        /* Reduce font size in the input fields */
+        input[type="number"], input[type="text"] {
+            font-size: 1rem;
+            padding: 5px;
+        }
+        /* Adjust timer input size */
+        .timer-input {
+            width: 60px; /* Adjust width to make the inputs more compact */
+            margin-right: 5px;
+            text-align: center;
+            height: 40px; /* Ensure input field height matches button height */
+        }
+
+        /* Adjust timer button size */
+        .timer-btn {
+            width: 50px;
+            height: 40px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Adjust the chat input */
+        .chat-input {
+            resize: none;  /* Disable manual resizing */
+            height: auto;  /* Automatically adjust height */
+            max-height: 150px;  /* Optional: Limit the height of the textarea */
+            overflow-y: hidden;  /* Prevent scroll bar */
+            transition: height 0.2s;  /* Smooth height adjustment */
+        }
+
+        /* Adjust buttons size to be square */
+        .chat-btn {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;  /* Adds space between the buttons */
+        }
+
+        /* Expand the textarea vertically */
+        .chat-input:focus, .chat-input:valid {
+            overflow-y: auto;
+        }
+        .slider-value {
+        color: #4682B4; /* A neutral blue color */
+        font-weight: bold;
+        margin-left: 10px; /* Adds space between the label and the number */
+    }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Timer and Session Rating (Left Column) -->
+        <div class="col-md-3 bg-light py-3">
+            <h1>Task Timer</h1>
+            <form id="timer-form">
+                <div class="d-flex align-items-center justify-content-between">
+                    <input type="number" id="hours" class="form-control timer-input" placeholder="H" value="0">
+                    <input type="number" id="minutes" class="form-control timer-input" placeholder="M" value="5">
+                    <input type="number" id="seconds" class="form-control timer-input" placeholder="S" value="0">
+                    <button type="submit" id="start-timer" class="btn btn-success timer-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button type="button" id="stop-timer" class="btn btn-danger timer-btn">
+                        <i class="fas fa-stop"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div id="timer-output" class="mt-3">Time: 00:00:00</div>
+
+            <audio id="notification-sound" src="/audio/Notification.wav"></audio>
+            <audio id="applause-sound" src="/audio/Applause.wav"></audio>
+            <audio id="gong-sound" src="/audio/Gong.wav"></audio>
+
+            <hr>
+
+            <!-- Rating Session Accordion with Enhanced Reflection Questions -->
+            <div class="accordion" id="sessionAccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Rate Your Session (Last: <span id="last-rating">N/A</span>)
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#sessionAccordion">
+                        <div class="card-body">
+                            <form id="feedback-form">
+                                <!-- Emotional State -->
+                                <div class="form-group">
+                                    <label for="emotional-state">How do you feel about your current emotional state?</label>
+                                    <select id="emotional-state" class="form-control">
+                                        <option value="happiness">Happiness</option>
+                                        <option value="stress">Stress</option>
+                                        <option value="confidence">Confidence</option>
+                                    </select>
+                                </div>
+                            
+                                <!-- Confidence Level Slider -->
+                                <div class="form-group">
+                                    <label for="confidence-level">On a scale of 1-10, how confident are you in completing this task? 
+                                        <span id="confidence-value" class="slider-value">5</span> <!-- Display current value -->
+                                    </label>
+                                    <input type="range" id="confidence-level" min="1" max="10" value="5" class="form-control">
+                                </div>
+                            
+                                <!-- Satisfaction Slider -->
+                                <div class="form-group">
+                                    <label for="satisfaction">How satisfied are you with the effort you put in today? 
+                                        <span id="satisfaction-value" class="slider-value">5</span> <!-- Display current value -->
+                                    </label>
+                                    <input type="range" id="satisfaction" min="1" max="10" value="5" class="form-control">
+                                </div>
+                            
+                                <!-- Task Progress Slider -->
+                                <div class="form-group">
+                                    <label for="task-progress">What percentage of your task did you complete today? 
+                                        <span id="task-progress-value" class="slider-value">50%</span> <!-- Display current value -->
+                                    </label>
+                                    <input type="range" id="task-progress" class="form-control" min="0" max="100" value="50">
+                                </div>
+                            
+                                <!-- Blockers -->
+                                <div class="form-group">
+                                    <label for="blockers">What blockers or distractions did you face?</label>
+                                    <input type="text" id="blockers" class="form-control" placeholder="Describe blockers">
+                                </div>
+                            
+                                <!-- New Skills -->
+                                <div class="form-group">
+                                    <label for="new-skills">What new skills or insights did you gain?</label>
+                                    <textarea id="new-skills" class="form-control" placeholder="Describe new learnings"></textarea>
+                                </div>
+                            
+                                <button type="submit" class="btn btn-info">Submit Feedback</button>
+                            </form>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Task List Section -->
+            <h3>Task List</h3>
+            <ul id="task-list" class="list-group mb-3"></ul>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="new-task">New Task:</label>
+                    <input type="text" id="new-task" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary btn-icon"><i class="fas fa-plus"></i> Add Task</button>
+            </form>
+        </div>
+
+        <!-- Chat Interface Section (Middle Column) -->
+        <div class="col-md-6 py-3">
+            <h3>LLM Chat Interface</h3>
+            <div id="chat-box" class="border p-3 mb-3" style="height: 400px; overflow-y: scroll; background-color: #f8f9fa;">
+                <!-- Content will be streamed here -->
+            </div>
+
+            <!-- Spinner to show while waiting for response -->
+            <div id="loading-spinner" class="spinner-border text-primary" style="display:none;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+
+            <!-- Estimated time remaining for response -->
+            <p id="time-remaining" style="font-weight: bold; color: blue;"></p>
+
+            <form id="chat-form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <textarea id="user-input" class="form-control chat-input" rows="1" placeholder="Enter your message..."></textarea>
+                        <div class="input-group-append">
+                            <button id="mic-button" class="btn btn-secondary chat-btn">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            <button type="submit" class="btn btn-primary chat-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <button id="read-response-button" class="btn btn-secondary btn-icon mt-2"><i class="fas fa-volume-up"></i> Read Response</button>
+
+            <div class="mt-3">
+                <h5>System Message:</h5>
+                <textarea id="system-message" class="form-control">{{ system_message }}</textarea>
+            </div>
+
+            <!-- Dropdown for Hashtag Shortcuts -->
+            <h5>Quick Actions:</h5>
+            <select id="taskOptions" class="form-control" onchange="selectPipeline()">
+                <option value="">-- Select --</option>
+                <option value="#taskgen">Generate Tasks</option>
+                <option value="#reflection">Analyze Reflection</option>
+                <option value="#research">Research Assistance</option>
+                <option value="#goalsetting">Goal Setting</option>
+            </select>
+        </div>
+
+        <!-- LLM Settings Section (Right Column) -->
+        <div class="col-md-3 py-3">
+            <h5>LLM Settings:</h5>
+            <form id="llm-config-form">
+                <div class="form-group">
+                    <label for="temperature">Temperature</label>
+                    <input type="number" id="temperature" class="form-control" value="{{ llm_config['temperature'] }}" step="0.1" min="0" max="1">
+                </div>
+                <div class="form-group">
+                    <label for="top_p">Top-p</label>
+                    <input type="number" id="top_p" class="form-control" value="{{ llm_config['top_p'] }}" step="0.1" min="0" max="1">
+                </div>
+                <div class="form-group">
+                    <label for="top_k">Top-k</label>
+                    <input type="number" id="top_k" class="form-control" value="{{ llm_config['top_k'] }}" step="1" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="max_tokens">Max Tokens</label>
+                    <input type="number" id="max_tokens" class="form-control" value="2048" step="1">
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="stream" class="form-control">
+                    <label for="stream">Enable Streaming</label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Reflection and Efficiency Dashboard Section -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h3>Reflection and Efficiency Dashboard</h3>
+            <div id="reflection-results" class="mb-4">
+                <!-- Results will be dynamically updated here -->
+                <h5>Emotional State: <span id="emotional-state-result">N/A</span></h5>
+                <h5>Confidence Level: <span id="confidence-level-result">N/A</span></h5>
+                <h5>Satisfaction: <span id="satisfaction-result">N/A</span></h5>
+                <h5>Task Progress: <span id="task-progress-result">N/A</span></h5>
+                <h5>Blockers: <span id="blockers-result">N/A</span></h5>
+                <h5>New Skills/Insights: <span id="new-skills-result">N/A</span></h5>
+            </div>
+
+            <canvas id="reflectionChart" width="400" height="150"></canvas>
+            <div id="additional-charts" class="mt-4">
+                <h5>Total Tasks Completed: <span id="total-tasks">0</span></h5>
+                <h5>Total Timers Completed: <span id="total-timers">0</span></h5>
+                <h5>Average Satisfaction Score: <span id="avg-satisfaction">N/A</span></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+   let estimatedTimeRemaining = 60;
+let timerInterval;
+let totalSeconds = 0;
+let mantraText = '';  // Initialize mantraText, which will be fetched from the backend
+
+
+// Function to update the visible value of sliders dynamically
+function updateSliderValue(sliderId, outputId) {
+    document.getElementById(sliderId).addEventListener('input', function() {
+        document.getElementById(outputId).textContent = this.value;
+    });
+}
+
+// Call the function for each slider with their respective IDs
+updateSliderValue('confidence-level', 'confidence-value');
+updateSliderValue('satisfaction', 'satisfaction-value');
+updateSliderValue('task-progress', 'task-progress-value');
+
+// Optional: Add percentage sign to task progress value
+document.getElementById('task-progress').addEventListener('input', function() {
+    document.getElementById('task-progress-value').textContent = this.value + '%';
+});
+
+
+
+// Function to fetch the mantra from the backend
+function loadMantra() {
+    fetch('/mantra_text')
+        .then(response => response.json())
+        .then(data => {
+            mantraText = data.mantra;
+        })
+        .catch(error => {
+            console.error('Error fetching the mantra:', error);
+        });
+}
+
+// Call loadMantra when the page loads to fetch the mantra
+window.onload = function () {
+    loadMantra();
+    document.getElementById("top_p").value = 0.9;
+    document.getElementById("top_k").value = 40;
+};
+
+// Text-to-Speech function with pauses for emphasis
+function speakText(text) {
+    if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 2.5;  // Speeding up the speech slightly
+        utterance.pitch = 1.1;  // Slightly higher pitch for emphasis
+        utterance.onend = function() {
+            console.log("Mantra reading complete.");
+        };
+        window.speechSynthesis.speak(utterance);
+    }
+}
+
+// Timer form submission
+document.getElementById('timer-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let hours = parseInt(document.getElementById('hours').value);
+    let minutes = parseInt(document.getElementById('minutes').value);
+    let seconds = parseInt(document.getElementById('seconds').value);
+
+    totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+    const originalSeconds = totalSeconds;
+
+    if (totalSeconds > 0) {
+        document.getElementById('timer-output').classList.add('running');
+        document.getElementById('notification-sound').play();
+        speakText(`Check your Plan! Can you do this task in ${Math.floor(originalSeconds / 60)} minutes?`);
+
+        // Timer logic
+        timerInterval = setInterval(function() {
+            if (totalSeconds <= 0) {
+                clearInterval(timerInterval);
+                document.getElementById('timer-output').classList.remove('running');
+                document.getElementById('timer-output').textContent = 'Time: 00:00:00';
+
+                // Play gong sound when the timer finishes
+                document.getElementById('gong-sound').play();
+
+                // Set a slight delay to give space between the gong and the applause/mantra
+                setTimeout(() => {
+                    // Play the applause sound
+                    document.getElementById('applause-sound').play();
+
+                    // After the applause starts, read the mantra
+                    speakText(mantraText);  // Use the fetched mantra here
+                }, 2000);  // 2-second delay after gong
+
+                // Automatically trigger the accordion to open for session rating
+                $('#collapseOne').collapse('show');
+                return;
+            }
+
+            // Inside the timer countdown
+            totalSeconds--;
+            let displayHours = Math.floor(totalSeconds / 3600);
+            let displayMinutes = Math.floor((totalSeconds % 3600) / 60);
+            let displaySeconds = totalSeconds % 60;
+            document.getElementById('timer-output').textContent = `Time: ${String(displayHours).padStart(2, '0')}:${String(displayMinutes).padStart(2, '0')}:${String(displaySeconds).padStart(2, '0')}`;
+
+            // Trigger notifications at 10%, 30%, 60%
+            if (totalSeconds === Math.floor(originalSeconds * 0.9)) {
+                speakText("Great Job!");
+                document.getElementById('applause-sound').play();
+            } else if (totalSeconds === Math.floor(originalSeconds * 0.669)) {
+                speakText("Start the Work or refine this task into smaller pieces");
+                document.getElementById('notification-sound').play();
+            } else if (totalSeconds === Math.floor(originalSeconds * 0.331)) {
+                speakText("Time to reflect on, refine or finish this task");
+                document.getElementById('notification-sound').play();
+            }
+        }, 1000);
+    }
+});
+
+// Stop Timer functionality
+document.getElementById('stop-timer').addEventListener('click', function() {
+    clearInterval(timerInterval);
+    document.getElementById('timer-output').classList.remove('running');
+    document.getElementById('timer-output').textContent = 'Timer stopped';
+});
+
+// Automatically adjust the height of the text area as the user types
+document.getElementById('user-input').addEventListener('input', function () {
+    this.style.height = 'auto';  // Reset height
+    this.style.height = (this.scrollHeight) + 'px';  // Set height based on content
+});
+
+    // Handle LLM response reading
+    document.getElementById('read-response-button').addEventListener('click', function() {
+        let llmResponse = document.getElementById('chat-box').innerText;
+        if (llmResponse) {
+            speakText(llmResponse);
+        }
+    });
+
+    // Handle session feedback submission
+    $('#feedback-form').on('submit', function (e) {
+        e.preventDefault();
+        let efficiency = $('#efficiency').val();
+        let focus = $('#focus').val();
+        let satisfaction = $('#satisfaction').val();
+        let energy = $('#energy').val();
+
+        $('#last-rating').text(satisfaction);
+        $('#sessionAccordion .collapse').collapse('hide');
+        alert("Feedback Submitted!");
+    });
+
+    
+    // Handle task addition
+$('#task-form').on('submit', function (e) {
+    e.preventDefault();
+    let task = $('#new-task').val();
+
+    $.post('/add_task', { task: task }, function (response) {
+        // Add the task to the task list on the frontend
+        $('#task-list').append('<li class="list-group-item">' + response.task + '</li>');
+        $('#new-task').val(''); // Clear the input field
+    }).fail(function() {
+        alert('Error: Could not add task');
+    });
+});
+
+// Load tasks on page load
+function loadTasks() {
+    $.get('/get_tasks', function (data) {
+        // Clear the task list
+        $('#task-list').empty();
+
+        // Loop through the tasks and add them to the list
+        data.tasks.forEach(function(task) {
+            $('#task-list').append('<li class="list-group-item">' + task.task + '</li>');
+        });
+    });
+}
+
+// Call loadTasks when the page loads to fetch the existing tasks
+$(document).ready(function() {
+    loadTasks();
+});
+
+// LLM form submission with streaming
+$('#chat-form').on('submit', function (e) {
+    e.preventDefault();
+
+    let message = $('#user-input').val();
+    let chatBox = $('#chat-box');
+    let spinner = $('#loading-spinner');
+    spinner.show();
+    chatBox.append('<p><strong>User:</strong> ' + message + '</p>');  // Append user input to chat
+
+    let temperature = $('#temperature').val();
+    let top_p = $('#top_p').val();
+    let top_k = $('#top_k').val();
+    let max_tokens = $('#max_tokens').val();
+    let stream = $('#stream').is(':checked');
+    let system_message = $('#system-message').val();
+
+    const requestData = {
+        prompt: message,
+        temperature: parseFloat(temperature),
+        top_p: parseFloat(top_p),
+        top_k: parseInt(top_k),
+        max_tokens: parseInt(max_tokens),
+        system_message: system_message,
+        stream: stream
+    };
+
+    let llmResponseParagraph = $('<p><strong>LLM:</strong> </p>');
+    chatBox.append(llmResponseParagraph);  // Create one LLM response paragraph to append tokens
+
+    let buffer = '';  // Buffer for accumulating tokens
+    let previousToken = "";  // Variable to track the previous token to avoid repeats
+    let tokenBuffer = [];
+    let bufferThreshold = 5;  // Buffer 5 tokens before appending to chat
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/submit_llm', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onprogress = function () {
+        let chunk = xhr.responseText;
+        buffer += chunk;
+
+        let lines = buffer.split('\n');
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i].trim();
+            if (line.startsWith('data:')) {
+                let token = line.substring(5).trim();  // Extract the token
+
+                if (token === "[DONE]") {
+                    spinner.hide();  // End the response handling
+                    return;
+                }
+
+                if (token.startsWith('_')) {
+                    previousToken += token;  // Merge with previous token (no space)
+                } else {
+                    if (previousToken) {
+                        tokenBuffer.push(previousToken);
+                        previousToken = "";
+                    }
+                    tokenBuffer.push(token);
+
+                    if (tokenBuffer.length >= bufferThreshold) {
+                        llmResponseParagraph.append(tokenBuffer.join(' '));
+                        tokenBuffer = [];
+                    }
+                }
+
+                chatBox.scrollTop(chatBox[0].scrollHeight);
+            }
+        }
+
+        buffer = lines[lines.length - 1];  // Keep leftover buffer for the next iteration
+    };
+
+    xhr.onload = function () {
+        spinner.hide();
+
+        // If streaming was not enabled, handle the full response here
+        if (!stream) {
+            const fullResponse = xhr.responseText;
+
+            try {
+                const jsonResponse = JSON.parse(fullResponse);
+                const assistantMessage = jsonResponse.choices[0].message?.content;
+
+                if (assistantMessage) {
+                    llmResponseParagraph.append(assistantMessage);  // Append only the assistant's content to the chat
+                } else {
+                    llmResponseParagraph.append('<p class="text-danger">Error: No assistant message found.</p>');
+                }
+            } catch (error) {
+                llmResponseParagraph.append('<p class="text-danger">Error: Invalid response format or malformed JSON.</p>');
+            }
+        }
+
+        // Append any remaining tokens in the buffer
+        if (tokenBuffer.length > 0) {
+            llmResponseParagraph.append(tokenBuffer.join(' ') + " ");
+            tokenBuffer = [];
+        }
+
+        chatBox.scrollTop(chatBox[0].scrollHeight);
+    };
+
+    xhr.onerror = function () {
+        spinner.hide();
+        chatBox.append('<p class="text-danger"><strong>Error:</strong> An error occurred during the request.</p>');
+    };
+
+    // Send the request with the LLM data
+    xhr.send(JSON.stringify(requestData));
+});
+
+    // Handle hashtag shortcuts
+    function selectPipeline() {
+        const taskOption = document.getElementById("taskOptions").value;
+        let systemMessage = document.getElementById("system-message");
+
+        if (taskOption === "#taskgen") {
+            systemMessage.value = "Generate a list of tasks and subtasks based on the user's input. Ensure that each task and subtask includes a \\\"task\\\" or \\\"subtask\\\" field, \\\"notes\\\" for additional details, and \\\"recommended_llm_settings\\\" that specify LLM parameters like temperature, top_p, top_k, and system_message. Use the following format as an example: \\{ \\\"tasks\\\": \\[ \\{ \\\"task\\\": \\\"Main Task 1\\\", \\\"subtasks\\\": \\[ \\{ \\\"subtask\\\": \\\"Subtask 1.1\\\", \\\"notes\\\": \\\"Details about this subtask\\\", \\\"recommended_llm_settings\\\": \\{ \\\"temperature\\\": 0.7, \\\"top_p\\\": 0.8, \\\"top_k\\\": 40, \\\"system_message\\\": \\\"Generate a detailed breakdown of this subtask.\\\" \\} \\}, \\{ \\\"subtask\\\": \\\"Subtask 1.2\\\", \\\"notes\\\": \\\"Details about this subtask\\\", \\\"recommended_llm_settings\\\": \\{ \\\"temperature\\\": 0.9, \\\"top_p\\\": 0.6, \\\"top_k\\\": 50, \\\"system_message\\\": \\\"Provide insights and further research options for this subtask.\\\" \\} \\} \\], \\\"notes\\\": \\\"Focus on the core aspects of the task\\\", \\\"recommended_llm_settings\\\": \\{ \\\"temperature\\\": 0.7, \\\"top_p\\\": 0.9, \\\"top_k\\\": 30, \\\"system_message\\\": \\\"Provide high-level guidance on this task.\\\" \\} \\} \\] \\}";
+        } else if (taskOption === "#reflection") {
+            systemMessage.value = "Analyze the user's reflection data and provide suggestions for improvement. Structure the output with \\\"strengths\\\", \\\"weaknesses\\\", and \\\"recommendations\\\" fields. Format the output as a structured JSON. Here is an example: \\{ \\\"suggestions\\\": \\[ \\\"Take regular breaks to avoid burnout.\\\", \\\"Improve task prioritization.\\\" \\], \\\"strengths\\\": \\[ \\\"Strong research skills.\\\", \\\"Great ability to meet deadlines.\\\" \\], \\\"weaknesses\\\": \\[ \\\"Occasionally lacks focus during long sessions.\\\", \\\"Needs to improve delegation skills.\\\" \\] \\}";
+        } else if (taskOption === "#research") {
+            systemMessage.value = "Conduct research based on the user's input. Return structured tasks and notes for further study. Format the output as a structured JSON. Here is an example: \\{ \\\"task\\\": \\\"Research AI trends\\\", \\\"subtasks\\\": \\[ \\\"Read the latest papers on ethical AI.\\\", \\\"Analyze AI contributions to healthcare.\\\" \\], \\\"notes\\\": \\[ \\\"Focus on the potential risks and benefits of AI.\\\" \\] \\}";
+        } else if (taskOption === "#goalsetting") {
+            systemMessage.value = "Set actionable goals based on the user's tasks and reflection. Provide a clear timeline and steps to achieve each goal. Format the output as a structured JSON. Here is an example: \\{ \\\"goals\\\": \\[ \\\"Complete a Python course in two weeks.\\\", \\\"Write a research paper on AI ethics.\\\" \\], \\\"timeline\\\": \\[ \\\"Week 1: Finish beginner Python exercises.\\\", \\\"Week 2: Start working on the research paper.\\\" \\] \\}";
+        } else if (taskOption === "#chartgen") {
+            systemMessage.value = "Analyze the user's performance data, and generate a graphical analysis. Include trends and key insights. Structure the output as JSON and include values for \\\"satisfaction_over_time\\\" and \\\"improvement_areas\\\". Here's an example: \\{ \\\"satisfaction_over_time\\\": \\[ \\{ \\\"week\\\": 1, \\\"score\\\": 7 \\}, \\{ \\\"week\\\": 2, \\\"score\\\": 8 \\}, \\{ \\\"week\\\": 3, \\\"score\\\": 9 \\} \\], \\\"improvement_areas\\\": \\[ \\\"Improve time management.\\\", \\\"Delegate tasks more efficiently.\\\" \\] \\}";
+        }
+
+        // Append the selected hashtag to the input field
+        document.getElementById("user-input").value += taskOption;
+    }
+
+
+    // Update displayed values for the range inputs
+    $('#efficiency').on('input', function () {
+        $('#efficiency-value').text($(this).val());
+    });
+    $('#focus').on('input', function () {
+        $('#focus-value').text($(this).val());
+    });
+    $('#satisfaction').on('input', function () {
+        $('#satisfaction-value').text($(this).val());
+    });
+    $('#energy').on('input', function () {
+        $('#energy-value').text($(this).val());
+    });
+
+    // Function to update dashboard
+    function updateDashboard() {
+        $('#total-tasks').text('10');
+        $('#total-timers').text('5');
+        $('#avg-satisfaction').text('8.5');
+
+        var ctx = document.getElementById('reflectionChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Satisfaction Score',
+                    data: [7, 8, 9, 6],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    }
+
+    // Populate default LLM settings
+    window.onload = function () {
+        document.getElementById("top_p").value = 0.9;
+        document.getElementById("top_k").value = 40;
+    };
+</script>
+
+</body>
+</html>
