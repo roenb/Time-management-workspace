@@ -26,8 +26,6 @@ Because we know that at minimum, this human realm is run using machinery that us
 
 Now rate what we accomplished and start a new timer.
 """
-
-# Function to add or update a task
 def add_task(task_name, parent_task=None):
     tasks_data = load_tasks()
 
@@ -38,17 +36,9 @@ def add_task(task_name, parent_task=None):
         "completed": False,
         "acceptance_criteria": [],
         "test_cases": [],
-        "uml_diagram": "",
         "ascii_diagram": "",
         "additional_info": "",
-        "related_tasks": [],
-        "recommended_llm_settings": {
-            "temperature": config["llm_api"]["temperature"],
-            "top_p": config["llm_api"]["top_p"],
-            "top_k": config["llm_api"]["top_k"],
-            "max_tokens": config["llm_api"]["max_tokens"],
-            "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
-        }
+        "related_tasks": []  # Store relationships here
     }
 
     if parent_task:
@@ -59,34 +49,49 @@ def add_task(task_name, parent_task=None):
     save_tasks(tasks_data)
     return new_task
 
-# Function to update task content based on hashtag (acceptance criteria, test cases, UML, etc.)
-def update_task_by_hashtag(task_id, response_content, hashtag):
-    tasks_data = load_tasks()
+# In-memory data storage for demonstration and analysis
+user_data = {
+    "reflections": [],
+    "task_progress": [],
+    "skills": []
+}
 
-    if task_id < len(tasks_data['tasks']):
-        task = tasks_data['tasks'][task_id]
+# Load config.json
+try:
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+except FileNotFoundError:
+    config = {
+        "llm_api": {
+            "system_message": "No config file found",
+            "model": "",
+            "url": "",
+            "temperature": 0.7,
+            "top_p": 0.9,
+            "top_k": 40,
+            "max_tokens": 500
+        }
+    }
 
-        # Parse the response based on the hashtag and update the relevant key
-        if hashtag == "#gentestcases":
-            if "test_cases" in response_content:
-                task["test_cases"] = response_content.get("test_cases", [])
-        elif hashtag == "#gencriteria":
-            if "acceptance_criteria" in response_content:
-                task["acceptance_criteria"] = response_content.get("acceptance_criteria", [])
-        elif hashtag == "#genuml":
-            if "uml_diagram" in response_content:
-                task["uml_diagram"] = response_content.get("uml_diagram", "")
-        elif hashtag == "#genascii":
-            if "ascii_diagram" in response_content:
-                task["ascii_diagram"] = response_content.get("ascii_diagram", "")
-        elif hashtag == "#addnotes":
-            task["additional_info"] = response_content.get("additional_info", "")
-
-        # Save the updated task data
-        save_tasks(tasks_data)
-        return task
+# Function to load reflection data from the JSON file
+def load_reflection_data():
+    if os.path.exists(DATA_FILE_PATH):
+        with open(DATA_FILE_PATH, 'r') as file:
+            return json.load(file)
     else:
-        return None
+        return {"reflections": []}
+
+# Function to save reflection data to the JSON file
+def save_reflection_data(data):
+    with open(DATA_FILE_PATH, 'w') as file:
+        json.dump(data, file, indent=4)
+
+# Function to update in-memory data for insights
+def update_insights(reflection):
+    user_data["reflections"].append(reflection)
+    user_data["task_progress"].append(reflection["task_progress"])
+    if reflection["new_skills"]:
+        user_data["skills"].append(reflection["new_skills"])
 
 # Function to load tasks from the JSON file with error handling
 def load_tasks():
@@ -109,14 +114,31 @@ def save_tasks(data):
 
 # Route to add a new task
 @app.route('/add_task', methods=['POST'])
-def add_task_route():
+def add_task():
     task_name = request.form['task']
     
     # Load existing tasks
     tasks_data = load_tasks()
 
-    # Add the new task
-    new_task = add_task(task_name)
+    # Add the new task with default settings from config.json
+    new_task = {
+        "task": task_name,
+        "completed": False,
+        "subtasks": [],
+        "notes": "Auto-generated task",
+        "recommended_llm_settings": {
+            "temperature": config["llm_api"]["temperature"],
+            "top_p": config["llm_api"]["top_p"],
+            "top_k": config["llm_api"]["top_k"],
+            "max_tokens": config["llm_api"]["max_tokens"],
+            "system_message": "Generate subtasks and insights."
+        }
+    }
+
+    tasks_data['tasks'].append(new_task)
+    
+    # Save updated tasks
+    save_tasks(tasks_data)
     
     return jsonify({"message": "Task added successfully", "task": task_name}), 200
 
@@ -145,6 +167,12 @@ def submit_reflection():
 
     return jsonify({"message": "Reflection submitted successfully"}), 200
 
+# Route to retrieve reflection data for chart generation
+@app.route('/get_reflection_data', methods=['GET'])
+def get_reflection_data():
+    data = load_reflection_data()
+    return jsonify(data)
+
 # Route to analyze reflection data and generate insights
 @app.route('/analyze_reflection', methods=['GET'])
 def analyze_reflection():
@@ -161,6 +189,16 @@ def analyze_reflection():
         "progress_summary": progress_summary,
         "skills_summary": skills_summary
     }), 200
+
+@app.route('/test_requests', methods=['GET'])
+def test_requests():
+    try:
+        # Send a test request to a public API
+        response = requests.get('https://jsonplaceholder.typicode.com/posts/1')
+        data = response.json()
+        return jsonify(data), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # Serve the mantra text to the frontend if needed
 @app.route('/mantra_text', methods=['GET'])
@@ -195,19 +233,32 @@ def get_audio_file(filename):
     else:
         return jsonify({"error": "File not found"}), 404
 
-# Route to get tasks by ID and update them with specific content (test cases, acceptance criteria, etc.)
-@app.route('/update_task', methods=['POST'])
-def update_task():
-    task_id = int(request.form['task_id'])
-    response_content = request.json['response_content']
-    hashtag = request.json['hashtag']
+@app.route('/')
+def index():
+    try:
+        system_message = config['llm_api'].get('system_message', 'Default system message')
+        llm_config = config['llm_api']
+    except KeyError as e:
+        return f"Missing key in config: {e}", 500
 
-    updated_task = update_task_by_hashtag(task_id, response_content, hashtag)
+    return render_template('index.html', system_message=system_message, llm_config=llm_config)
 
-    if updated_task:
-        return jsonify({"message": "Task updated successfully", "task": updated_task}), 200
-    else:
-        return jsonify({"error": "Task not found"}), 404
+# Helper function to log events
+def log_event(event_type, content, additional_info=None):
+    logging.info(f"Event: {event_type} | Content: {content}")
+    if additional_info:
+        logging.info(f"Additional Info: {additional_info}")
+
+# Function to get the full response if streaming is disabled
+def get_llm_response(llm_request_data):
+    try:
+        url = config['llm_api']['url']
+        response = requests.post(url, json=llm_request_data)
+        response.raise_for_status()
+        return response.text
+    except requests.RequestException as e:
+        log_event('LLM Request Error', str(e))
+        return f'Error: {str(e)}'
 
 # Streaming response handler for LLM
 def stream_llm_response(llm_request_data):
@@ -216,23 +267,27 @@ def stream_llm_response(llm_request_data):
         with requests.post(url, json=llm_request_data, stream=True) as response:
             response.raise_for_status()
 
-            previous_token = None
-            buffer = ''
-            tokenBuffer = []
-            bufferThreshold = 5
+            previous_token = None  # Track the previous token
+            buffer = ''  # Buffer for accumulating chunks
+            tokenBuffer = []  # Buffer for tokens to be appended together
+            bufferThreshold = 5  # Number of tokens to buffer before sending them
 
+            # Process the stream content
             for chunk in response.iter_content(chunk_size=None):
                 if chunk:
                     chunk_str = chunk.decode('utf-8')
                     buffer += chunk_str
 
+                    # Split buffer into lines
                     lines = buffer.split('\n')
-                    for line in lines[:-1]:
+                    for line in lines[:-1]:  # Process all lines except the last incomplete one
                         line = line.strip()
 
+                        # Process lines that start with "data:"
                         if line.startswith("data:"):
                             token = line[5:].strip()
 
+                            # End of stream
                             if token == "[DONE]":
                                 yield "data:[DONE]\n\n"
                                 return
@@ -250,6 +305,7 @@ def stream_llm_response(llm_request_data):
                                         tokenBuffer = []
 
                             except json.JSONDecodeError:
+                                log_event('LLM Stream Error', f'Invalid JSON format: {token}')
                                 yield f"data:Error: Invalid response format\n\n"
 
                     buffer = lines[-1]
@@ -258,9 +314,9 @@ def stream_llm_response(llm_request_data):
                 yield f"data:{' '.join(tokenBuffer)}\n\n"
 
     except requests.RequestException as e:
+        log_event('LLM Stream Error', str(e))
         yield f"data:Error: {str(e)}\n\n"
 
-# Route to submit LLM request and handle streaming or non-streaming responses
 @app.route('/submit_llm', methods=['POST'])
 def submit_llm():
     data = request.get_json()
@@ -284,7 +340,6 @@ def submit_llm():
         logging.error(f"KeyError in LLM request data: {e}")
         return jsonify({"error": f"Missing key in LLM request data: {e}"}), 400
 
-    # Stream or return full response based on request
     if data.get('stream', True):
         return Response(stream_llm_response(llm_request_data), mimetype='text/plain')
     else:
@@ -298,23 +353,6 @@ def submit_llm():
         except ValueError:
             logging.error("Error parsing LLM response")
             return jsonify({"error": "Invalid response format"}), 500
-
-# Helper function to log events
-def log_event(event_type, content, additional_info=None):
-    logging.info(f"Event: {event_type} | Content: {content}")
-    if additional_info:
-        logging.info(f"Additional Info: {additional_info}")
-
-# Function to get the full response if streaming is disabled
-def get_llm_response(llm_request_data):
-    try:
-        url = config['llm_api']['url']
-        response = requests.post(url, json=llm_request_data)
-        response.raise_for_status()
-        return response.text
-    except requests.RequestException as e:
-        log_event('LLM Request Error', str(e))
-        return f'Error: {str(e)}'
 
 if __name__ == '__main__':
     app.run(debug=True)
