@@ -667,11 +667,118 @@ $('#chat-form').on('submit', function (e) {
             systemMessage.value = "Set actionable goals based on the user's tasks and reflection. Provide a clear timeline and steps to achieve each goal. Format the output as a structured JSON. Here is an example: \\{ \\\"goals\\\": \\[ \\\"Complete a Python course in two weeks.\\\", \\\"Write a research paper on AI ethics.\\\" \\], \\\"timeline\\\": \\[ \\\"Week 1: Finish beginner Python exercises.\\\", \\\"Week 2: Start working on the research paper.\\\" \\] \\}";
         } else if (taskOption === "#chartgen") {
             systemMessage.value = "Analyze the user's performance data, and generate a graphical analysis. Include trends and key insights. Structure the output as JSON and include values for \\\"satisfaction_over_time\\\" and \\\"improvement_areas\\\". Here's an example: \\{ \\\"satisfaction_over_time\\\": \\[ \\{ \\\"week\\\": 1, \\\"score\\\": 7 \\}, \\{ \\\"week\\\": 2, \\\"score\\\": 8 \\}, \\{ \\\"week\\\": 3, \\\"score\\\": 9 \\} \\], \\\"improvement_areas\\\": \\[ \\\"Improve time management.\\\", \\\"Delegate tasks more efficiently.\\\" \\] \\}";
+        } else if (taskOption === "#genuml") {
+            systemMessage.value = "Generate UML diagram based on the provided task structure. Return as a Mermaid-compatible syntax.";
+        } else if (taskOption === "#gentestcases") {
+            systemMessage.value = "Generate test cases for the given task. Structure output as a JSON array.";
+        } else if (taskOption === "#gencriteria") {
+            systemMessage.value = "Generate acceptance criteria for the tasks. Format the output as a structured list.";
         }
 
         // Append the selected hashtag to the input field
         document.getElementById("user-input").value += taskOption;
     }
+
+    // Handle hashtag shortcuts with detailed system messages
+function selectPipeline() {
+    const taskOption = document.getElementById("taskOptions").value;
+    let systemMessage = document.getElementById("system-message");
+
+    if (taskOption === "#taskgen") {
+        systemMessage.value = `{
+            "prompt": "Generate a list of tasks and subtasks based on the user's input. Each task should include 'task', 'subtask', 'description', 'notes', and 'related_tasks'. Example structure: 
+            { 
+                "tasks": [
+                    { 
+                        "task": "Main Task 1", 
+                        "subtasks": [
+                            { "subtask": "Subtask 1.1", "description": "Details about this subtask" },
+                            { "subtask": "Subtask 1.2", "description": "Details about this subtask" }
+                        ], 
+                        "description": "Description of the task",
+                        "notes": "Additional details about the task.",
+                        "related_tasks": ["Task 2", "Task 3"]
+                    }
+                ] 
+            }"
+        }`;
+
+    } else if (taskOption === "#reflection") {
+        systemMessage.value = `{
+            "prompt": "Analyze the user's reflection data and provide strengths, weaknesses, and recommendations. 
+            Example structure: 
+            {
+                "strengths": ["Strong research skills", "Great time management"], 
+                "weaknesses": ["Occasionally loses focus"], 
+                "recommendations": ["Take regular breaks", "Improve task prioritization"]
+            }"
+        }`;
+
+    } else if (taskOption === "#research") {
+            systemMessage.value = "Conduct research based on the user's input. Return structured tasks and notes for further study. Format the output as a structured JSON. Here is an example: \\{ \\\"task\\\": \\\"Research AI trends\\\", \\\"subtasks\\\": \\[ \\\"Read the latest papers on ethical AI.\\\", \\\"Analyze AI contributions to healthcare.\\\" \\], \\\"notes\\\": \\[ \\\"Focus on the potential risks and benefits of AI.\\\" \\] \\}";
+        } else if (taskOption === "#goalsetting") {
+            systemMessage.value = "Set actionable goals based on the user's tasks and reflection. Provide a clear timeline and steps to achieve each goal. Format the output as a structured JSON. Here is an example: \\{ \\\"goals\\\": \\[ \\\"Complete a Python course in two weeks.\\\", \\\"Write a research paper on AI ethics.\\\" \\], \\\"timeline\\\": \\[ \\\"Week 1: Finish beginner Python exercises.\\\", \\\"Week 2: Start working on the research paper.\\\" \\] \\}";
+        } else if (taskOption === "#chartgen") {
+            systemMessage.value = "Analyze the user's performance data, and generate a graphical analysis. Include trends and key insights. Structure the output as JSON and include values for \\\"satisfaction_over_time\\\" and \\\"improvement_areas\\\". Here's an example: \\{ \\\"satisfaction_over_time\\\": \\[ \\{ \\\"week\\\": 1, \\\"score\\\": 7 \\}, \\{ \\\"week\\\": 2, \\\"score\\\": 8 \\}, \\{ \\\"week\\\": 3, \\\"score\\\": 9 \\} \\], \\\"improvement_areas\\\": \\[ \\\"Improve time management.\\\", \\\"Delegate tasks more efficiently.\\\" \\] \\}";
+        } else if (taskOption === "#gentestcases") {
+        systemMessage.value = `{
+            "prompt": "Generate test cases for the given task. Each test case should include 'test_case', 'expected_input', 'expected_output', 'steps', and 'status'. Format output as a JSON array.
+            Example structure:
+            {
+                "test_cases": [
+                    {
+                        "test_case": "Verify login functionality",
+                        "expected_input": { "username": "valid_user", "password": "valid_pass" },
+                        "expected_output": "User is successfully logged in",
+                        "steps": ["Navigate to login page", "Enter valid credentials", "Click login button"],
+                        "status": "Pending"
+                    },
+                    {
+                        "test_case": "Verify error message for invalid credentials",
+                        "expected_input": { "username": "invalid_user", "password": "invalid_pass" },
+                        "expected_output": "Error message is displayed",
+                        "steps": ["Navigate to login page", "Enter invalid credentials", "Click login button"],
+                        "status": "Pending"
+                    }
+                ]
+            }"
+        }`;
+
+    } else if (taskOption === "#gencriteria") {
+        systemMessage.value = `{
+            "prompt": "Generate acceptance criteria for the tasks. Each criterion should include 'criteria', 'condition', and 'status'. Format the output as a structured list.
+            Example structure:
+            {
+                "acceptance_criteria": [
+                    {
+                        "criteria": "Login functionality works",
+                        "condition": "User can log in with valid credentials",
+                        "status": "Pending"
+                    },
+                    {
+                        "criteria": "Error message displays for invalid credentials",
+                        "condition": "Error is shown when wrong credentials are entered",
+                        "status": "Pending"
+                    }
+                ]
+            }"
+        }`;
+
+    } else if (taskOption === "#genuml") {
+        systemMessage.value = `{
+            "prompt": "Generate a UML diagram based on the task structure. Provide output in Mermaid syntax. Example structure: 
+            graph TD;
+            A[Start] --> B[Do Task];
+            B --> C{Is Done?};
+            C -->|Yes| D[Finish];
+            C -->|No| E[Retry];"
+        }`;
+    }
+
+    // Append the selected hashtag to the input field
+    document.getElementById("user-input").value += taskOption;
+}
+
 
 
     // Update displayed values for the range inputs
