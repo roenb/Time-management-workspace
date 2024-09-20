@@ -757,3 +757,50 @@
   }
 }
 2024-09-20 05:21:05,932:INFO:127.0.0.1 - - [20/Sep/2024 05:21:05] "POST /submit_llm HTTP/1.1" 200 -
+2024-09-20 08:25:30,273:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-20 08:25:30,274:INFO:[33mPress CTRL+C to quit[0m
+2024-09-20 08:25:30,278:INFO: * Restarting with stat
+2024-09-20 08:25:31,073:WARNING: * Debugger is active!
+2024-09-20 08:25:31,085:INFO: * Debugger PIN: 926-336-710
+2024-09-20 08:25:38,469:INFO:127.0.0.1 - - [20/Sep/2024 08:25:38] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-20 08:25:38,730:INFO:127.0.0.1 - - [20/Sep/2024 08:25:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-20 08:25:43,904:INFO:127.0.0.1 - - [20/Sep/2024 08:25:43] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-20 08:27:53,377:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.178.26:5000
+2024-09-20 08:27:53,377:INFO:[33mPress CTRL+C to quit[0m
+2024-09-20 08:27:53,379:INFO: * Restarting with stat
+2024-09-20 08:27:54,133:WARNING: * Debugger is active!
+2024-09-20 08:27:54,143:INFO: * Debugger PIN: 926-336-710
+2024-09-20 08:27:59,389:INFO:127.0.0.1 - - [20/Sep/2024 08:27:59] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-20 08:28:01,723:INFO:127.0.0.1 - - [20/Sep/2024 08:28:01] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-20 08:29:26,007:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2024-09-20 08:29:26,119:INFO: * Restarting with stat
+2024-09-20 08:29:26,870:WARNING: * Debugger is active!
+2024-09-20 08:29:26,879:INFO: * Debugger PIN: 926-336-710
+2024-09-20 08:30:23,713:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2024-09-20 08:30:23,834:INFO: * Restarting with stat
+2024-09-20 08:30:24,646:WARNING: * Debugger is active!
+2024-09-20 08:30:24,657:INFO: * Debugger PIN: 926-336-710
+2024-09-20 08:30:30,954:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.178.26:5000
+2024-09-20 08:30:30,954:INFO:[33mPress CTRL+C to quit[0m
+2024-09-20 08:30:30,956:INFO: * Restarting with stat
+2024-09-20 08:30:31,752:WARNING: * Debugger is active!
+2024-09-20 08:30:31,762:INFO: * Debugger PIN: 926-336-710
+2024-09-20 08:30:32,996:INFO:127.0.0.1 - - [20/Sep/2024 08:30:32] "GET / HTTP/1.1" 200 -
+2024-09-20 08:30:33,248:INFO:127.0.0.1 - - [20/Sep/2024 08:30:33] "GET /get_tasks HTTP/1.1" 200 -
+2024-09-20 08:30:33,359:INFO:127.0.0.1 - - [20/Sep/2024 08:30:33] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-09-20 08:30:33,360:INFO:127.0.0.1 - - [20/Sep/2024 08:30:33] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-09-20 08:30:33,360:INFO:127.0.0.1 - - [20/Sep/2024 08:30:33] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-09-20 08:30:33,534:INFO:127.0.0.1 - - [20/Sep/2024 08:30:33] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2024-09-20 08:31:18,663:INFO:127.0.0.1 - - [20/Sep/2024 08:31:18] "GET / HTTP/1.1" 200 -
+2024-09-20 08:31:19,092:INFO:127.0.0.1 - - [20/Sep/2024 08:31:19] "GET /get_tasks HTTP/1.1" 200 -
+2024-09-20 08:31:19,093:INFO:127.0.0.1 - - [20/Sep/2024 08:31:19] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-09-20 08:31:19,093:INFO:127.0.0.1 - - [20/Sep/2024 08:31:19] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-09-20 08:31:19,168:INFO:127.0.0.1 - - [20/Sep/2024 08:31:19] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-09-20 08:31:19,352:INFO:127.0.0.1 - - [20/Sep/2024 08:31:19] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -

@@ -26,6 +26,28 @@ Because we know that at minimum, this human realm is run using machinery that us
 
 Now rate what we accomplished and start a new timer.
 """
+# Load the config from 'config.json'
+def load_config():
+    config_path = 'config.json'
+    if os.path.exists(config_path):
+        with open(config_path, 'r') as f:
+            return json.load(f)
+    else:
+        # Provide default config in case config.json is missing
+        return {
+            "llm_api": {
+                "system_message": "No config file found",
+                "model": "",
+                "url": "",
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500
+            }
+        }
+
+# Load the configuration
+config = load_config()
 
 # Function to add or update a task
 def add_task(task_name, parent_task=None):
@@ -106,6 +128,16 @@ def load_tasks():
 def save_tasks(data):
     with open(TASKS_FILE_PATH, 'w') as file:
         json.dump(data, file, indent=4)
+
+@app.route('/')
+def index():
+    try:
+        system_message = config['llm_api'].get('system_message', 'Default system message')
+        llm_config = config['llm_api']
+    except KeyError as e:
+        return f"Missing key in config: {e}", 500
+
+    return render_template('index.html', system_message=system_message, llm_config=llm_config)
 
 # Route to add a new task
 @app.route('/add_task', methods=['POST'])
@@ -317,4 +349,5 @@ def get_llm_response(llm_request_data):
         return f'Error: {str(e)}'
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
