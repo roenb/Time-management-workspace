@@ -1145,3 +1145,11 @@
 2024-10-04 07:36:49,281:INFO:127.0.0.1 - - [04/Oct/2024 07:36:49] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
 2024-10-04 07:36:54,583:INFO:127.0.0.1 - - [04/Oct/2024 07:36:54] "[35m[1mPOST /delete_task/1 HTTP/1.1[0m" 500 -
 2024-10-04 07:45:41,611:INFO:127.0.0.1 - - [04/Oct/2024 07:45:41] "GET /get_task/0 HTTP/1.1" 200 -
+2024-10-04 15:22:57,410:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2024-10-04 15:22:57,720:INFO: * Restarting with stat
+2024-10-04 15:23:00,861:WARNING: * Debugger is active!
+2024-10-04 15:23:00,872:INFO: * Debugger PIN: 926-336-710
+2024-10-04 15:23:11,241:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2024-10-04 15:23:11,352:INFO: * Restarting with stat
+2024-10-04 15:23:12,210:WARNING: * Debugger is active!
+2024-10-04 15:23:12,219:INFO: * Debugger PIN: 926-336-710

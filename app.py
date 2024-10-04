@@ -54,6 +54,7 @@ def add_task(task_name, parent_task=None):
     tasks_data = load_tasks()
 
     new_task = {
+        "id": len(tasks_data['tasks']) + 1,  # Assuming you want unique IDs
         "title": task_name,
         "description": "",
         "subtasks": [],
@@ -64,6 +65,7 @@ def add_task(task_name, parent_task=None):
         "ascii_diagram": "",
         "additional_info": "",
         "related_tasks": [],
+        "context": "",  # New field for context
         "recommended_llm_settings": {
             "temperature": config["llm_api"]["temperature"],
             "top_p": config["llm_api"]["top_p"],
@@ -80,6 +82,7 @@ def add_task(task_name, parent_task=None):
     
     save_tasks(tasks_data)
     return new_task
+
 
 # Function to update task content based on hashtag (acceptance criteria, test cases, UML, etc.)
 def update_task_by_hashtag(task_id, response_content, hashtag):
@@ -158,7 +161,7 @@ def get_tasks():
     tasks_data = load_tasks()
     print("Tasks Data:", tasks_data)  # Log the tasks data for verification
     return jsonify(tasks_data), 200
-    
+
 @app.route('/get_task/<int:task_index>', methods=['GET'])
 def get_task(task_index):
     tasks_data = load_tasks()
@@ -252,6 +255,7 @@ def update_task():
         return jsonify({"message": "Task updated successfully", "task": updated_task}), 200
     else:
         return jsonify({"error": "Task not found"}), 404
+
 @app.route('/update_task_details/<int:task_id>', methods=['POST'])
 def update_task_details(task_id):
     updated_task_data = request.json  # Receive the updated task data from the frontend
@@ -260,7 +264,7 @@ def update_task_details(task_id):
     if task_id < len(tasks_data['tasks']):
         task = tasks_data['tasks'][task_id]
         
-        # Update the task with the new data from the frontend
+        # Update the task with the new data from the frontend, including the context
         task['title'] = updated_task_data.get('title', task['title'])
         task['description'] = updated_task_data.get('description', task['description'])
         task['subtasks'] = updated_task_data.get('subtasks', task['subtasks'])
@@ -268,6 +272,7 @@ def update_task_details(task_id):
         task['test_cases'] = updated_task_data.get('test_cases', task['test_cases'])
         task['ascii_diagram'] = updated_task_data.get('ascii_diagram', task['ascii_diagram'])
         task['additional_info'] = updated_task_data.get('additional_info', task['additional_info'])
+        task['context'] = updated_task_data.get('context', task['context'])  # New field for context
         
         # Save the updated tasks back to the file
         save_tasks(tasks_data)
@@ -275,6 +280,7 @@ def update_task_details(task_id):
         return jsonify({"message": "Task updated successfully", "task": task}), 200
     else:
         return jsonify({"error": "Task not found"}), 404
+
 
 # Streaming response handler for LLM
 def stream_llm_response(llm_request_data):
