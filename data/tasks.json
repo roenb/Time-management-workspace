@@ -1,8 +1,71 @@
 {
     "tasks": [
         {
-            "task": "get past login",
-            "completed": false
+            "title": "Workspaces settings gutter and overflow fix ",
+            "description": "we need ot add gutter space to the right of hte right column or padding so it is not flush with the right side of the screen",
+            "subtasks": [
+                "checkcurrent padding/gutters",
+                "find hthe right gutter/padding spacing using browser dev toos"
+            ],
+            "completed": false,
+            "acceptance_criteria": [
+                "when we load the page the right side is not completely flush withteh browser wall",
+                "When we hide the right column the padding should match",
+                "when we show the advanced mode the padding should match"
+            ],
+            "test_cases": [
+                "Clicking the simple view hides the right column and maintians teh padding",
+                "clicking advanced view maintians padding"
+            ],
+            "uml_diagram": "",
+            "ascii_diagram": "",
+            "additional_info": "",
+            "related_tasks": [],
+            "recommended_llm_settings": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500,
+                "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
+            }
+        },
+        {
+            "title": "Workspaces settings gutter and overflow fix ",
+            "description": "",
+            "subtasks": [],
+            "completed": false,
+            "acceptance_criteria": [],
+            "test_cases": [],
+            "uml_diagram": "",
+            "ascii_diagram": "",
+            "additional_info": "",
+            "related_tasks": [],
+            "recommended_llm_settings": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500,
+                "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
+            }
+        },
+        {
+            "title": "debug tasks list",
+            "description": "",
+            "subtasks": [],
+            "completed": false,
+            "acceptance_criteria": [],
+            "test_cases": [],
+            "uml_diagram": "",
+            "ascii_diagram": "",
+            "additional_info": "",
+            "related_tasks": [],
+            "recommended_llm_settings": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500,
+                "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
+            }
         }
     ]
 }

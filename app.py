@@ -156,7 +156,19 @@ def add_task_route():
 @app.route('/get_tasks', methods=['GET'])
 def get_tasks():
     tasks_data = load_tasks()
+    print("Tasks Data:", tasks_data)  # Log the tasks data for verification
     return jsonify(tasks_data), 200
+    
+@app.route('/get_task/<int:task_index>', methods=['GET'])
+def get_task(task_index):
+    tasks_data = load_tasks()
+    
+    # Ensure the task_index is within range
+    if task_index < len(tasks_data['tasks']):
+        task = tasks_data['tasks'][task_index]
+        return jsonify(task), 200
+    else:
+        return jsonify({"error": "Task not found"}), 404
 
 # Route to handle reflection data submission (merged both JSON and in-memory saving)
 @app.route('/submit_reflection', methods=['POST'])
@@ -240,6 +252,29 @@ def update_task():
         return jsonify({"message": "Task updated successfully", "task": updated_task}), 200
     else:
         return jsonify({"error": "Task not found"}), 404
+@app.route('/update_task_details/<int:task_id>', methods=['POST'])
+def update_task_details(task_id):
+    updated_task_data = request.json  # Receive the updated task data from the frontend
+    tasks_data = load_tasks()
+
+    if task_id < len(tasks_data['tasks']):
+        task = tasks_data['tasks'][task_id]
+        
+        # Update the task with the new data from the frontend
+        task['title'] = updated_task_data.get('title', task['title'])
+        task['description'] = updated_task_data.get('description', task['description'])
+        task['subtasks'] = updated_task_data.get('subtasks', task['subtasks'])
+        task['acceptance_criteria'] = updated_task_data.get('acceptance_criteria', task['acceptance_criteria'])
+        task['test_cases'] = updated_task_data.get('test_cases', task['test_cases'])
+        task['ascii_diagram'] = updated_task_data.get('ascii_diagram', task['ascii_diagram'])
+        task['additional_info'] = updated_task_data.get('additional_info', task['additional_info'])
+        
+        # Save the updated tasks back to the file
+        save_tasks(tasks_data)
+
+        return jsonify({"message": "Task updated successfully", "task": task}), 200
+    else:
+        return jsonify({"error": "Task not found"}), 404
 
 # Streaming response handler for LLM
 def stream_llm_response(llm_request_data):
@@ -291,6 +326,13 @@ def stream_llm_response(llm_request_data):
 
     except requests.RequestException as e:
         yield f"data:Error: {str(e)}\n\n"
+
+@app.route('/delete_task/<task_id>', methods=['POST'])
+def delete_task(task_id):
+    tasks_data = load_tasks()
+    tasks_data['tasks'] = [task for task in tasks_data['tasks'] if task['id'] != task_id]
+    save_tasks(tasks_data)
+    return jsonify({"message": "Task deleted successfully"}), 200
 
 # Route to submit LLM request and handle streaming or non-streaming responses
 @app.route('/submit_llm', methods=['POST'])
