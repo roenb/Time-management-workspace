@@ -5,11 +5,40 @@ import json
 import logging
 import pygame
 import requests
+import platform  # Import platform module to detect OS
+
+import speech_recognition as sr
+from pydub import AudioSegment
+from io import BytesIO
+import ffmpeg  # ffmpeg-python
 
 app = Flask(__name__)
 
 # Setup logging
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
+
+def set_ffmpeg_paths():
+    current_os = platform.system()  # Get the OS name (e.g., 'Windows', 'Darwin' for macOS, 'Linux')
+    script_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory where this script is located
+    
+    if current_os == "Windows":
+        # Set the path for ffmpeg binaries for Windows using a relative path
+        ffmpeg_path = os.path.join(script_dir, "ffmpeg", "win", "ffmpeg-2024-10-02-git-358fdf3083-essentials_build", "bin")
+    elif current_os == "Darwin":
+        # Set the path for ffmpeg binaries for macOS using a relative path
+        ffmpeg_path = os.path.join(script_dir, "ffmpeg", "osx")
+    else:
+        # Placeholder for future Linux setup
+        ffmpeg_path = os.path.join(script_dir, "ffmpeg", "linux")  # Modify this when you add Linux support
+
+
+    # Set environment variables for ffmpeg, ffprobe, and ffplay
+    os.environ["FFMPEG_BINARY"] = os.path.join(ffmpeg_path, "ffmpeg")
+    os.environ["FFPROBE_BINARY"] = os.path.join(ffmpeg_path, "ffprobe")
+    os.environ["FFPLAY_BINARY"] = os.path.join(ffmpeg_path, "ffplay")  # Only if ffplay is needed
+
+# Call the function to set the paths
+set_ffmpeg_paths()
 
 # Initialize pygame for sound playing
 pygame.mixer.init()
@@ -26,6 +55,7 @@ Because we know that at minimum, this human realm is run using machinery that us
 
 Now rate what we accomplished and start a new timer.
 """
+
 # Load the config from 'config.json'
 def load_config():
     config_path = 'config.json'
@@ -378,6 +408,37 @@ def submit_llm():
         except ValueError:
             logging.error("Error parsing LLM response")
             return jsonify({"error": "Invalid response format"}), 500
+
+
+@app.route('/process_audio_chunk', methods=['POST'])
+def process_audio_chunk():
+    if 'audio_chunk' not in request.files:
+        logging.warning("No audio chunk found in request")
+        return jsonify({"error": "No audio chunk found in request"}), 400
+
+    try:
+        audio_chunk = request.files['audio_chunk']
+        # Force ffmpeg to interpret input as wav
+        audio = AudioSegment.from_file(BytesIO(audio_chunk.read()), format="wav")
+        audio_wav = BytesIO()
+        audio.export(audio_wav, format="wav")
+        audio_wav.seek(0)
+
+        recognizer = sr.Recognizer()
+        logging.debug("Audio chunk received and converted to WAV format.")
+
+        with sr.AudioFile(audio_wav) as source:
+            audio_data = recognizer.record(source)
+            logging.info("Processing audio data with Google API...")
+            transcribed_text = recognizer.recognize_google(audio_data)
+        
+        logging.info(f"Transcription successful: {transcribed_text}")
+        return jsonify({"transcribed_text": transcribed_text}), 200
+    
+    except Exception as e:
+        logging.error(f"Error processing audio chunk: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
 
 # Helper function to log events
 def log_event(event_type, content, additional_info=None):

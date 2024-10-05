@@ -12,3 +12,4 @@ SpeechRecognition  # For the speech-to-text capability
 pyaudio            # For microphone input
 python-docx
 pygame                       # For playing sounds
+pydub

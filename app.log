@@ -1153,3 +1153,715 @@
 2024-10-04 15:23:11,352:INFO: * Restarting with stat
 2024-10-04 15:23:12,210:WARNING: * Debugger is active!
 2024-10-04 15:23:12,219:INFO: * Debugger PIN: 926-336-710
+2024-10-05 06:39:24,302:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.178.26:5000
+2024-10-05 06:39:24,323:INFO:[33mPress CTRL+C to quit[0m
+2024-10-05 06:39:24,324:INFO: * Restarting with stat
+2024-10-05 06:39:25,248:WARNING: * Debugger is active!
+2024-10-05 06:39:25,261:INFO: * Debugger PIN: 926-336-710
+2024-10-05 06:39:31,854:INFO:127.0.0.1 - - [05/Oct/2024 06:39:31] "GET / HTTP/1.1" 200 -
+2024-10-05 06:39:32,114:INFO:127.0.0.1 - - [05/Oct/2024 06:39:32] "GET /get_tasks HTTP/1.1" 200 -
+2024-10-05 06:39:32,243:INFO:127.0.0.1 - - [05/Oct/2024 06:39:32] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 06:39:32,249:INFO:127.0.0.1 - - [05/Oct/2024 06:39:32] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-10-05 06:39:32,252:INFO:127.0.0.1 - - [05/Oct/2024 06:39:32] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-10-05 06:39:32,487:INFO:127.0.0.1 - - [05/Oct/2024 06:39:32] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2024-10-05 06:39:46,829:INFO:127.0.0.1 - - [05/Oct/2024 06:39:46] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 06:40:04,658:INFO:127.0.0.1 - - [05/Oct/2024 06:40:04] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:09:57,602:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2024-10-05 07:09:57,730:INFO: * Restarting with stat
+2024-10-05 07:09:58,676:WARNING: * Debugger is active!
+2024-10-05 07:09:58,688:INFO: * Debugger PIN: 926-336-710
+2024-10-05 07:15:48,214:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2024-10-05 07:15:48,371:INFO: * Restarting with stat
+2024-10-05 07:15:49,304:WARNING: * Debugger is active!
+2024-10-05 07:15:49,316:INFO: * Debugger PIN: 926-336-710
+2024-10-05 07:17:09,674:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.178.26:5000
+2024-10-05 07:17:09,674:INFO:[33mPress CTRL+C to quit[0m
+2024-10-05 07:17:09,676:INFO: * Restarting with stat
+2024-10-05 07:17:10,533:WARNING: * Debugger is active!
+2024-10-05 07:17:10,544:INFO: * Debugger PIN: 926-336-710
+2024-10-05 07:18:31,676:INFO:127.0.0.1 - - [05/Oct/2024 07:18:31] "GET / HTTP/1.1" 200 -
+2024-10-05 07:18:31,914:INFO:127.0.0.1 - - [05/Oct/2024 07:18:31] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:18:32,098:INFO:127.0.0.1 - - [05/Oct/2024 07:18:32] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:18:32,104:INFO:127.0.0.1 - - [05/Oct/2024 07:18:32] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:18:32,104:INFO:127.0.0.1 - - [05/Oct/2024 07:18:32] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:18:32,222:INFO:127.0.0.1 - - [05/Oct/2024 07:18:32] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:18:32,410:INFO:127.0.0.1 - - [05/Oct/2024 07:18:32] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:18:32,565:INFO:127.0.0.1 - - [05/Oct/2024 07:18:32] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2024-10-05 07:18:34,162:INFO:127.0.0.1 - - [05/Oct/2024 07:18:34] "GET / HTTP/1.1" 200 -
+2024-10-05 07:18:34,423:INFO:127.0.0.1 - - [05/Oct/2024 07:18:34] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:18:34,546:INFO:127.0.0.1 - - [05/Oct/2024 07:18:34] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:18:34,548:INFO:127.0.0.1 - - [05/Oct/2024 07:18:34] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:19:39,667:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.178.26:5000
+2024-10-05 07:19:39,668:INFO:[33mPress CTRL+C to quit[0m
+2024-10-05 07:19:39,669:INFO: * Restarting with stat
+2024-10-05 07:19:40,574:WARNING: * Debugger is active!
+2024-10-05 07:19:40,585:INFO: * Debugger PIN: 926-336-710
+2024-10-05 07:22:23,494:INFO:127.0.0.1 - - [05/Oct/2024 07:22:23] "GET / HTTP/1.1" 200 -
+2024-10-05 07:22:23,749:INFO:127.0.0.1 - - [05/Oct/2024 07:22:23] "GET /get_tasks HTTP/1.1" 200 -
+2024-10-05 07:22:23,859:INFO:127.0.0.1 - - [05/Oct/2024 07:22:23] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:22:23,860:INFO:127.0.0.1 - - [05/Oct/2024 07:22:23] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:22:23,860:INFO:127.0.0.1 - - [05/Oct/2024 07:22:23] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:22:23,934:INFO:127.0.0.1 - - [05/Oct/2024 07:22:23] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:22:24,303:INFO:127.0.0.1 - - [05/Oct/2024 07:22:24] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2024-10-05 07:22:26,938:INFO:Processing audio data with Google API...
+2024-10-05 07:22:27,265:ERROR:Error processing audio chunk: 
+2024-10-05 07:22:27,265:INFO:127.0.0.1 - - [05/Oct/2024 07:22:27] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:28,253:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 00000260be45ba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:28,253:INFO:127.0.0.1 - - [05/Oct/2024 07:22:28] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:28,968:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 00000217227cba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:28,968:INFO:127.0.0.1 - - [05/Oct/2024 07:22:28] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:30,286:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 000002ae62d1ba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:30,287:INFO:127.0.0.1 - - [05/Oct/2024 07:22:30] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:30,999:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 00000211f694ba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:31,000:INFO:127.0.0.1 - - [05/Oct/2024 07:22:31] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:32,329:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 000001dd9623ba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:32,330:INFO:127.0.0.1 - - [05/Oct/2024 07:22:32] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:33,038:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 000001ac0e47ba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:33,039:INFO:127.0.0.1 - - [05/Oct/2024 07:22:33] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:33,771:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[mp3 @ 00000272d7e7aa00] Format mp3 detected only with low score of 1, misdetection possible!
+[cache @ 00000272d7e7ba80] Inner protocol failed to seekback end : -40
+    Last message repeated 1 times
+[mp3 @ 00000272d7e7aa00] Failed to read frame size: Could not seek to 8774.
+[cache @ 00000272d7e7ba80] Statistics, cache hits:2 cache misses:1
+cache:pipe:0: Invalid argument
+
+2024-10-05 07:22:33,772:INFO:127.0.0.1 - - [05/Oct/2024 07:22:33] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:37,004:INFO:Processing audio data with Google API...
+2024-10-05 07:22:37,179:ERROR:Error processing audio chunk: 
+2024-10-05 07:22:37,180:INFO:127.0.0.1 - - [05/Oct/2024 07:22:37] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:38,345:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 000001397b41ba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:38,346:INFO:127.0.0.1 - - [05/Oct/2024 07:22:38] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:39,047:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 00000256061eba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:39,048:INFO:127.0.0.1 - - [05/Oct/2024 07:22:39] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:40,542:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 0000028e188aba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:40,542:INFO:127.0.0.1 - - [05/Oct/2024 07:22:40] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:41,160:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 0000022a6344ba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:41,161:INFO:127.0.0.1 - - [05/Oct/2024 07:22:41] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:22:42,354:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[cache @ 000001dbf10aba80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:22:42,355:INFO:127.0.0.1 - - [05/Oct/2024 07:22:42] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:27:10,526:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2024-10-05 07:27:10,664:INFO: * Restarting with stat
+2024-10-05 07:27:11,575:WARNING: * Debugger is active!
+2024-10-05 07:27:11,586:INFO: * Debugger PIN: 926-336-710
+2024-10-05 07:29:19,938:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2024-10-05 07:29:20,064:INFO: * Restarting with stat
+2024-10-05 07:29:20,979:WARNING: * Debugger is active!
+2024-10-05 07:29:20,992:INFO: * Debugger PIN: 926-336-710
+2024-10-05 07:29:23,164:INFO:127.0.0.1 - - [05/Oct/2024 07:29:23] "GET / HTTP/1.1" 200 -
+2024-10-05 07:29:23,413:INFO:127.0.0.1 - - [05/Oct/2024 07:29:23] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:29:23,537:INFO:127.0.0.1 - - [05/Oct/2024 07:29:23] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:29:23,537:INFO:127.0.0.1 - - [05/Oct/2024 07:29:23] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:29:23,761:INFO:127.0.0.1 - - [05/Oct/2024 07:29:23] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2024-10-05 07:38:59,937:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.178.26:5000
+2024-10-05 07:38:59,937:INFO:[33mPress CTRL+C to quit[0m
+2024-10-05 07:38:59,939:INFO: * Restarting with stat
+2024-10-05 07:39:00,801:WARNING: * Debugger is active!
+2024-10-05 07:39:00,813:INFO: * Debugger PIN: 926-336-710
+2024-10-05 07:39:00,871:INFO:127.0.0.1 - - [05/Oct/2024 07:39:00] "GET / HTTP/1.1" 200 -
+2024-10-05 07:39:00,921:INFO:127.0.0.1 - - [05/Oct/2024 07:39:00] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:39:01,232:INFO:127.0.0.1 - - [05/Oct/2024 07:39:01] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:39:01,233:INFO:127.0.0.1 - - [05/Oct/2024 07:39:01] "GET /get_tasks HTTP/1.1" 200 -
+2024-10-05 07:39:01,307:INFO:127.0.0.1 - - [05/Oct/2024 07:39:01] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:39:01,755:INFO:127.0.0.1 - - [05/Oct/2024 07:39:01] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2024-10-05 07:39:03,713:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 000001ef2f5fb080] invalid start code [26]E[223][163] in RIFF header
+[cache @ 000001ef2f5fc100] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:39:03,713:INFO:127.0.0.1 - - [05/Oct/2024 07:39:03] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:39:05,036:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 000001d0693dac00] invalid start code C[198][129][3] in RIFF header
+[cache @ 000001d0693dbc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:39:05,036:INFO:127.0.0.1 - - [05/Oct/2024 07:39:05] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:39:05,751:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 0000015f55c4ac00] invalid start code C[198][129][7] in RIFF header
+[cache @ 0000015f55c4bc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:39:05,752:INFO:127.0.0.1 - - [05/Oct/2024 07:39:05] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:39:07,081:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 000002037006ac00] invalid start code C[198][129][11] in RIFF header
+[cache @ 000002037006bc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:39:07,081:INFO:127.0.0.1 - - [05/Oct/2024 07:39:07] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:39:07,789:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 0000018c521cac00] invalid start code C[198][129][15] in RIFF header
+[cache @ 0000018c521cbc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:39:07,790:INFO:127.0.0.1 - - [05/Oct/2024 07:39:07] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:39:09,028:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 0000025a5556ac00] invalid start code C[198][129][19] in RIFF header
+[cache @ 0000025a5556bc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:39:09,029:INFO:127.0.0.1 - - [05/Oct/2024 07:39:09] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:40:31,006:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.178.26:5000
+2024-10-05 07:40:31,006:INFO:[33mPress CTRL+C to quit[0m
+2024-10-05 07:40:31,008:INFO: * Restarting with stat
+2024-10-05 07:40:31,874:WARNING: * Debugger is active!
+2024-10-05 07:40:31,885:INFO: * Debugger PIN: 926-336-710
+2024-10-05 07:40:32,652:INFO:127.0.0.1 - - [05/Oct/2024 07:40:32] "GET / HTTP/1.1" 200 -
+2024-10-05 07:40:32,888:INFO:127.0.0.1 - - [05/Oct/2024 07:40:32] "GET /get_tasks HTTP/1.1" 200 -
+2024-10-05 07:40:33,027:INFO:127.0.0.1 - - [05/Oct/2024 07:40:33] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:40:33,027:INFO:127.0.0.1 - - [05/Oct/2024 07:40:33] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:40:33,028:INFO:127.0.0.1 - - [05/Oct/2024 07:40:33] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:40:33,260:INFO:127.0.0.1 - - [05/Oct/2024 07:40:33] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2024-10-05 07:40:35,308:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 00000183d0c5b080] invalid start code [26]E[223][163] in RIFF header
+[cache @ 00000183d0c5c100] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:40:35,310:INFO:127.0.0.1 - - [05/Oct/2024 07:40:35] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:40:36,027:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 00000242b98fac00] invalid start code C[198][129][3] in RIFF header
+[cache @ 00000242b98fbc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:40:36,027:INFO:127.0.0.1 - - [05/Oct/2024 07:40:36] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:40:37,343:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 000002a0d61dac00] invalid start code C[198][129][7] in RIFF header
+[cache @ 000002a0d61dbc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:40:37,343:INFO:127.0.0.1 - - [05/Oct/2024 07:40:37] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:40:38,062:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 000001dfd020ac00] invalid start code C[198][129][11] in RIFF header
+[cache @ 000001dfd020bc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:40:38,062:INFO:127.0.0.1 - - [05/Oct/2024 07:40:38] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:40:38,873:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 000001a1c950ac00] invalid start code C[198][129][15] in RIFF header
+[cache @ 000001a1c950bc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:40:38,874:INFO:127.0.0.1 - - [05/Oct/2024 07:40:38] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:44:27,544:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.178.26:5000
+2024-10-05 07:44:27,545:INFO:[33mPress CTRL+C to quit[0m
+2024-10-05 07:44:27,546:INFO: * Restarting with stat
+2024-10-05 07:44:28,426:WARNING: * Debugger is active!
+2024-10-05 07:44:28,437:INFO: * Debugger PIN: 926-336-710
+2024-10-05 07:44:35,101:INFO:127.0.0.1 - - [05/Oct/2024 07:44:35] "GET / HTTP/1.1" 200 -
+2024-10-05 07:44:35,353:INFO:127.0.0.1 - - [05/Oct/2024 07:44:35] "GET /get_tasks HTTP/1.1" 200 -
+2024-10-05 07:44:35,476:INFO:127.0.0.1 - - [05/Oct/2024 07:44:35] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:44:35,476:INFO:127.0.0.1 - - [05/Oct/2024 07:44:35] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:44:35,476:INFO:127.0.0.1 - - [05/Oct/2024 07:44:35] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2024-10-05 07:44:35,662:INFO:127.0.0.1 - - [05/Oct/2024 07:44:35] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2024-10-05 07:44:47,876:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 000001b5f237b080] invalid start code [26]E[223][163] in RIFF header
+[cache @ 000001b5f237c100] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:44:47,876:INFO:127.0.0.1 - - [05/Oct/2024 07:44:47] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:44:48,586:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 00000225dc35ac00] invalid start code C[172][129][3] in RIFF header
+[cache @ 00000225dc35bc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:44:48,586:INFO:127.0.0.1 - - [05/Oct/2024 07:44:48] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:44:49,928:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 00000193fdc5ac00] invalid start code C[198][129][7] in RIFF header
+[cache @ 00000193fdc5bc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:44:49,928:INFO:127.0.0.1 - - [05/Oct/2024 07:44:49] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:44:50,621:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 00000297328bac00] invalid start code C[198][129][11] in RIFF header
+[cache @ 00000297328bbc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:44:50,622:INFO:127.0.0.1 - - [05/Oct/2024 07:44:50] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:44:51,963:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 0000024803deac00] invalid start code C[198][129][15] in RIFF header
+[cache @ 0000024803debc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:44:51,964:INFO:127.0.0.1 - - [05/Oct/2024 07:44:51] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:44:52,669:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 000002361449ac00] invalid start code C[198][129][19] in RIFF header
+[cache @ 000002361449bc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:44:52,670:INFO:127.0.0.1 - - [05/Oct/2024 07:44:52] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -
+2024-10-05 07:44:53,352:ERROR:Error processing audio chunk: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 4.2.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.3.1 (GCC) 20200523
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+[wav @ 000002b4a1e5ac00] invalid start code C[198][129][23] in RIFF header
+[cache @ 000002b4a1e5bc80] Statistics, cache hits:0 cache misses:1
+cache:pipe:0: Invalid data found when processing input
+
+2024-10-05 07:44:53,352:INFO:127.0.0.1 - - [05/Oct/2024 07:44:53] "[35m[1mPOST /process_audio_chunk HTTP/1.1[0m" 500 -

@@ -56,14 +56,14 @@ def walk(arg, dirname, names):
                 # Handle the "_d" thing.
                 pathname = os.path.join(dirname, name)
                 base, ext = os.path.splitext(name)
-                if base[-2:] == "_d":
+                if base.endswith("_d"):
                     name = base[:-2] + ext
                 is_dll = ext.lower() != ".exe"
                 if os.path.normcase(name) in descriptions:
                     desc = descriptions[os.path.normcase(name)]
                     try:
                         verstamp.stamp(vars, pathname, desc, is_dll=is_dll)
-                        numStamped = numStamped + 1
+                        numStamped += 1
                     except win32api.error as exc:
                         print(
                             "Could not stamp",
@@ -78,7 +78,7 @@ def walk(arg, dirname, names):
                     # skip branding this - assume already branded or handled elsewhere
 
 
-#        print "Stamped", pathname
+# print("Stamped", pathname)
 
 
 def load_descriptions(fname, vars):

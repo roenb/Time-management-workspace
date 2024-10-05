@@ -14,29 +14,27 @@
 
 
     <style>
-        /* Dynamic styling for the countdown timer */
+        /* Custom styling for your layout */
         #timer-output {
             font-size: 1.5rem;
             transition: font-size 0.5s;
         }
+
         #timer-output.running {
             font-size: 3rem;
-            color: #FF6347;
+            color: hsl(9, 100%, 64%);
             text-align: center;
         }
 
-        /* Collapsible section styling */
         .accordion .card-header {
             cursor: pointer;
         }
 
-        /* Scrollable task list */
         #task-list {
             max-height: 200px;
             overflow-y: scroll;
         }
 
-        /* Styling for the checkbox and its label */
         .custom-checkbox {
             display: flex;
             align-items: center;
@@ -53,50 +51,44 @@
             margin: 0;
         }
 
-        /* Styling for icons */
         .btn-icon {
             padding: 0.5rem;
             font-size: 1.5rem;
         }
 
-        /* Increase the width of the timer buttons */
         .btn-success, .btn-danger {
-            width: 100%;  /* Make the buttons span the width of their container */
-            font-size: 1.2rem;  /* Adjust font size for larger buttons */
-            padding: 10px 0;    /* Add padding to make the button more prominent */
+            width: 100%;
+            font-size: 1.2rem;
+            padding: 10px 0;
         }
 
-        /* Resize the Add Task button to match input sizes */
         .btn-primary {
-            width: 100%; /* Make this button also span its container */
-            font-size: 1rem;  /* Adjust font size */
+            width: 100%;
+            font-size: 1rem;
             padding: 8px 0;
         }
 
-        /* Reduce the size of all buttons/icons to match input sizes */
         button i {
-            font-size: 1rem;  /* Reduce icon size */
+            font-size: 1rem;
         }
 
         button {
-            font-size: 1rem;  /* Reduce button text size */
-            padding: 8px 15px; /* Adjust padding to match input sizes */
+            font-size: 1rem;
+            padding: 8px 15px;
         }
 
-        /* Reduce font size in the input fields */
         input[type="number"], input[type="text"] {
             font-size: 1rem;
             padding: 5px;
         }
-        /* Adjust timer input size */
+
         .timer-input {
-            width: 60px; /* Adjust width to make the inputs more compact */
+            width: 60px;
             margin-right: 5px;
             text-align: center;
-            height: 40px; /* Ensure input field height matches button height */
+            height: 40px;
         }
 
-        /* Adjust timer button size */
         .timer-btn {
             width: 50px;
             height: 40px;
@@ -105,52 +97,61 @@
             align-items: center;
         }
 
-        /* Adjust the chat input */
         .chat-input {
-            resize: none;  /* Disable manual resizing */
-            height: auto;  /* Automatically adjust height */
-            max-height: 150px;  /* Optional: Limit the height of the textarea */
-            overflow-y: hidden;  /* Prevent scroll bar */
-            transition: height 0.2s;  /* Smooth height adjustment */
+            resize: none;
+            height: auto;
+            max-height: 150px;
+            overflow-y: hidden;
+            transition: height 0.2s;
         }
 
-        /* Adjust buttons size to be square */
+        .chat-input:focus, .chat-input:valid {
+            overflow-y: auto;
+        }
+
         .chat-btn {
             width: 40px;
             height: 40px;
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            margin-left: 5px;  /* Adds space between the buttons */
+            margin-left: 5px;
         }
 
-        /* Expand the textarea vertically */
-        .chat-input:focus, .chat-input:valid {
-            overflow-y: auto;
+        /* Volume meter styling */
+        #volume-meter {
+            width: 100px;
+            height: 40px;
+            background-color: lightgrey;
+            display: none;
         }
+
+        #volume-bar {
+            width: 0%;
+            height: 100%;
+            background-color: green;
+        }
+
         .slider-value {
-        color: #4682B4; /* A neutral blue color */
-        font-weight: bold;
-        margin-left: 10px; /* Adds space between the label and the number */
+            color: #4682B4;
+            font-weight: bold;
+            margin-left: 10px;
         }
-        /* Task highlighting when selected */
+
         .list-group-item.active {
             background-color: #007bff;
             color: white;
         }
 
-        /* Position the 3-dot dropdown for task actions */
         .task-actions {
             position: absolute;
             top: 8px;
             right: 8px;
         }
 
-        /* Ensure dropdown has a minimum width */
         .dropdown-menu {
             min-width: 120px;
         }
-
     </style>
 </head>
 <body>
@@ -286,11 +287,21 @@
             <form id="chat-form">
                 <div class="form-group">
                     <div class="input-group">
+                        <!-- Microphone Button -->
+                        <button id="mic-button" class="btn btn-secondary chat-btn" style="background-color: red;">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+
+                        <!-- Volume meter for audio recording visualization -->
+                        <div id="volume-meter" style="width: 200px; height: 20px; background-color: lightgrey; margin-left: 10px; display: none;">
+                            <div id="volume-bar" style="width: 0%; height: 100%; background-color: green;"></div>
+                        </div>
+
+                        <!-- Input Field (Expandable Text Area) -->
                         <textarea id="user-input" class="form-control chat-input" rows="1" placeholder="Enter your message..."></textarea>
+
                         <div class="input-group-append">
-                            <button id="mic-button" class="btn btn-secondary chat-btn">
-                                <i class="fas fa-microphone"></i>
-                            </button>
+
                             <button type="submit" class="btn btn-primary chat-btn">
                                 <i class="fas fa-paper-plane"></i>
                             </button>
@@ -405,6 +416,34 @@
         </div>
     </div>
 </div>
+
+
+<!-- Microphone Selection Modal -->
+<div class="modal fade" id="microphoneModal" tabindex="-1" role="dialog" aria-labelledby="microphoneModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="microphoneModalLabel">Select Microphone</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="mic-selection-form">
+                    <div class="form-group">
+                        <label for="mic-selection">Choose a microphone:</label>
+                        <select class="form-control" id="mic-selection">
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="confirm-mic-selection">Select</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-confirm">
@@ -440,6 +479,147 @@ let timerInterval;
 let totalSeconds = 0;
 let mantraText = '';  // Initialize mantraText, which will be fetched from the backend
 let selectedTaskId = null; // Store the selected task ID for highlighting and other operations
+
+
+
+
+let isRecording = false;
+let audioChunks = [];
+let mediaRecorder;
+let selectedMicrophone = null; // Selected microphone input device
+let micButton = document.getElementById('mic-button');
+let volumeMeter = document.getElementById('volume-meter');
+let volumeBar = document.getElementById('volume-bar');
+let chatInput = document.getElementById('user-input');
+
+// Open the microphone selection modal when the page loads
+$(document).ready(function () {
+    navigator.mediaDevices.enumerateDevices().then(devices => {
+        let micSelect = $('#mic-selection');
+        devices.forEach(device => {
+            if (device.kind === 'audioinput') {
+                micSelect.append(new Option(device.label, device.deviceId));
+            }
+        });
+        $('#microphoneModal').modal('show'); // Show the modal when the page loads
+    });
+});
+
+// Handle microphone selection
+$('#confirm-mic-selection').click(function () {
+    selectedMicrophone = $('#mic-selection').val();
+    $('#microphoneModal').modal('hide');
+});
+
+// Handle microphone button click
+micButton.addEventListener('click', function (e) {
+    e.preventDefault();  // Prevent form submission
+
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert('Your browser does not support audio recording.');
+        return;
+    }
+
+    if (!isRecording) {
+        startRecording();
+    } else {
+        stopRecording();
+    }
+});
+
+function startRecording() {
+    isRecording = true;
+    micButton.style.backgroundColor = 'green';  // Change button to green when recording
+    volumeMeter.style.display = 'block';  // Show volume meter
+
+    navigator.mediaDevices.getUserMedia({ audio: { deviceId: selectedMicrophone ? { exact: selectedMicrophone } : undefined } })
+    .then(stream => {
+        mediaRecorder = new MediaRecorder(stream);
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const source = audioContext.createMediaStreamSource(stream);
+        const analyser = audioContext.createAnalyser();
+        analyser.fftSize = 512;
+        const dataArray = new Uint8Array(analyser.frequencyBinCount);
+        source.connect(analyser);
+
+        // Audio visualization logic
+        function updateVolumeMeter() {
+            analyser.getByteFrequencyData(dataArray);
+            const volume = Math.max(...dataArray) / 256;
+            volumeBar.style.width = (volume * 100) + '%';
+            if (isRecording) {
+                requestAnimationFrame(updateVolumeMeter);
+            }
+        }
+        updateVolumeMeter();
+
+        mediaRecorder.ondataavailable = function (event) {
+            audioChunks.push(event.data);
+
+            // Send chunks to the server as they become available
+            let audioBlob = new Blob([event.data], { type: 'audio/wav' });
+            let formData = new FormData();
+            formData.append('audio_chunk', audioBlob);
+
+            fetch('/process_audio_chunk', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.transcribed_text) {
+                    appendTranscription(data.transcribed_text);
+                }
+            })
+            .catch(error => {
+                console.error('Error processing audio:', error);
+            });
+        };
+
+        mediaRecorder.start(1000);  // Break the audio into sub-chunks every second
+    }).catch(error => {
+        alert('Could not access the microphone.');
+        console.error('Error accessing microphone:', error);
+    });
+}
+
+function stopRecording() {
+    isRecording = false;
+    micButton.style.backgroundColor = 'red';  // Change button color back to red when recording stops
+    volumeMeter.style.display = 'none';  // Hide the volume meter
+    mediaRecorder.stop();
+}
+
+function appendTranscription(transcribedText) {
+    chatInput.value += transcribedText + ' ';
+    autoExpandTextArea(chatInput);
+}
+
+// Auto-expand the input field as more text is added
+function autoExpandTextArea(element) {
+    element.style.height = 'auto';
+    element.style.height = (element.scrollHeight) + 'px';
+}
+
+// Function to send each audio chunk to the server for processing
+function sendAudioChunk(audioChunk) {
+    let formData = new FormData();
+    formData.append('audio_chunk', audioChunk);
+
+    // Send audio data to the server for processing
+    fetch('/process_audio_chunk', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('user-input').value += data.transcribed_text;  // Append transcribed text
+    })
+    .catch(error => {
+        console.error('Error processing audio chunk:', error);
+    });
+}
+
 
 function loadTasks() {
     $.get('/get_tasks', function (data) {
