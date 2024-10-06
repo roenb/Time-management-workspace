@@ -123,6 +123,7 @@
             width: 100px;
             height: 40px;
             background-color: lightgrey;
+            margin-right: 10px;  /* Add padding between volume meter and input field */
             display: none;
         }
 
@@ -267,6 +268,10 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-icon"><i class="fas fa-plus"></i> Add Task</button>
             </form>
+
+            <!-- Clear Cache Button (Place it where appropriate, e.g., near the microphone modal) -->
+<button id="clear-mic-selection" class="btn btn-warning mt-3">Clear Microphone Selection</button>
+
         </div>
 
         <!-- Chat Interface Section (Middle Column) -->
@@ -440,10 +445,13 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="confirm-mic-selection">Select</button>
+                <!-- Clear Cache Button -->
+                <button id="clear-mic-selection" class="btn btn-warning">Clear Microphone Selection</button>
             </div>
         </div>
     </div>
 </div>
+
 <!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-confirm">
@@ -481,60 +489,79 @@ let mantraText = '';  // Initialize mantraText, which will be fetched from the b
 let selectedTaskId = null; // Store the selected task ID for highlighting and other operations
 
 
-
-
 let isRecording = false;
-let audioChunks = [];
-let mediaRecorder;
-let selectedMicrophone = null; // Selected microphone input device
-let micButton = document.getElementById('mic-button');
-let volumeMeter = document.getElementById('volume-meter');
-let volumeBar = document.getElementById('volume-bar');
-let chatInput = document.getElementById('user-input');
+    let audioChunks = [];
+    let mediaRecorder;
+    let selectedMicrophone = null; // Selected microphone input device
+    let micButton = document.getElementById('mic-button');
+    let volumeMeter = document.getElementById('volume-meter');
+    let volumeBar = document.getElementById('volume-bar');
+    let chatInput = document.getElementById('user-input');
 
-// Open the microphone selection modal when the page loads
-$(document).ready(function () {
-    navigator.mediaDevices.enumerateDevices().then(devices => {
-        let micSelect = $('#mic-selection');
-        devices.forEach(device => {
-            if (device.kind === 'audioinput') {
-                micSelect.append(new Option(device.label, device.deviceId));
-            }
+    let mediaStream = null; // Store the media stream
+
+    // Open the microphone selection modal when the page loads
+    $(document).ready(function () {
+        navigator.mediaDevices.enumerateDevices().then(devices => {
+            let micSelect = $('#mic-selection');
+            devices.forEach(device => {
+                if (device.kind === 'audioinput') {
+                    micSelect.append(new Option(device.label, device.deviceId));
+                }
+            });
+            $('#microphoneModal').modal('show'); // Show the modal when the page loads
         });
-        $('#microphoneModal').modal('show'); // Show the modal when the page loads
     });
-});
 
-// Handle microphone selection
-$('#confirm-mic-selection').click(function () {
-    selectedMicrophone = $('#mic-selection').val();
-    $('#microphoneModal').modal('hide');
-});
+    // Handle microphone selection and save it to localStorage
+    $('#confirm-mic-selection').click(function () {
+        selectedMicrophone = $('#mic-selection').val();
+        localStorage.setItem('selectedMicrophone', selectedMicrophone);  // Store the selected microphone in localStorage
+        $('#microphoneModal').modal('hide');
 
-// Handle microphone button click
-micButton.addEventListener('click', function (e) {
-    e.preventDefault();  // Prevent form submission
+        // Request access to the selected microphone
+        navigator.mediaDevices.getUserMedia({ audio: { deviceId: { exact: selectedMicrophone } } })
+            .then(stream => {
+                mediaStream = stream; // Store the media stream for later use
+                console.log('Media stream obtained:', mediaStream);
+            })
+            .catch(error => {
+                console.error('Error accessing microphone:', error);
+                alert('Could not access the selected microphone.');
+            });
+    });
 
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-        alert('Your browser does not support audio recording.');
-        return;
-    }
+    // Handle microphone button click
+    micButton.addEventListener('click', function (e) {
+        e.preventDefault();  // Prevent form submission
 
-    if (!isRecording) {
-        startRecording();
-    } else {
-        stopRecording();
-    }
-});
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            alert('Your browser does not support audio recording.');
+            return;
+        }
 
-function startRecording() {
-    isRecording = true;
-    micButton.style.backgroundColor = 'green';  // Change button to green when recording
-    volumeMeter.style.display = 'block';  // Show volume meter
+        if (!isRecording) {
+            if (mediaStream) {
+                startRecording(mediaStream); // Start recording using the obtained media stream
+            } else {
+                alert('No media stream available. Please select a microphone first.');
+            }
+        } else {
+            stopRecording();
+        }
+    });
 
-    navigator.mediaDevices.getUserMedia({ audio: { deviceId: selectedMicrophone ? { exact: selectedMicrophone } : undefined } })
-    .then(stream => {
-        mediaRecorder = new MediaRecorder(stream);
+    // Start recording function
+    function startRecording(stream) {
+        isRecording = true;
+        micButton.style.backgroundColor = 'green';  // Change button to green when recording
+        volumeMeter.style.display = 'block';  // Show volume meter
+
+        mediaRecorder = new MediaRecorder(stream, {
+            mimeType: 'audio/webm;codecs=opus'
+        });
+
+        // Audio visualization logic
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         const source = audioContext.createMediaStreamSource(stream);
         const analyser = audioContext.createAnalyser();
@@ -553,53 +580,84 @@ function startRecording() {
         }
         updateVolumeMeter();
 
+        // Handle audio chunks
         mediaRecorder.ondataavailable = function (event) {
             audioChunks.push(event.data);
 
-            // Send chunks to the server as they become available
-            let audioBlob = new Blob([event.data], { type: 'audio/wav' });
-            let formData = new FormData();
-            formData.append('audio_chunk', audioBlob);
+            // Save every 15 seconds of audio
+            if (audioChunks.length > 0) {
+                const blob = new Blob(audioChunks, { type: 'audio/webm' });
+                const formData = new FormData();
+                const timestamp = new Date().toISOString().replace(/:/g, '-'); // Ensure valid filename
 
-            fetch('/process_audio_chunk', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.transcribed_text) {
-                    appendTranscription(data.transcribed_text);
-                }
-            })
-            .catch(error => {
-                console.error('Error processing audio:', error);
-            });
+                formData.append('audio', blob);
+                formData.append('filename', `audio_${timestamp}.webm`);
+
+                // Send the audio blob to the backend for saving
+                fetch('/save_audio', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.file_path) {
+                        console.log('Audio saved at:', data.file_path);
+
+                        // Now that the audio is saved, trigger the processing route
+                        processSavedAudio(data.file_path);
+                    } else {
+                        console.error('Failed to save audio:', data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+                // Clear the chunks after sending
+                audioChunks = [];
+            }
         };
 
-        mediaRecorder.start(1000);  // Break the audio into sub-chunks every second
-    }).catch(error => {
-        alert('Could not access the microphone.');
-        console.error('Error accessing microphone:', error);
+        // Start recording and set interval to break chunks every 15 seconds
+        mediaRecorder.start(15000); // Break the audio into sub-chunks every second
+    }
+
+    // Stop recording function
+    function stopRecording() {
+        if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+            isRecording = false;
+            micButton.style.backgroundColor = 'red';  // Change button color back to red when recording stops
+            volumeMeter.style.display = 'none';  // Hide the volume meter
+            mediaRecorder.stop();
+        } else {
+            console.error("MediaRecorder is not active or is undefined.");
+        }
+    }
+
+
+// Function to send saved audio file for processing
+function processSavedAudio(filePath) {
+    const formData = new FormData();
+    formData.append('file_path', filePath);  // Send the saved file path for processing
+
+    fetch('/process_audio_chunk', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.transcribed_text) {
+            console.log('Transcription:', data.transcribed_text);
+            appendTranscription(data.transcribed_text);
+        } else {
+            console.error('Error in transcription:', data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Error processing audio chunk:', error);
     });
 }
 
-function stopRecording() {
-    isRecording = false;
-    micButton.style.backgroundColor = 'red';  // Change button color back to red when recording stops
-    volumeMeter.style.display = 'none';  // Hide the volume meter
-    mediaRecorder.stop();
-}
-
-function appendTranscription(transcribedText) {
-    chatInput.value += transcribedText + ' ';
-    autoExpandTextArea(chatInput);
-}
-
-// Auto-expand the input field as more text is added
-function autoExpandTextArea(element) {
-    element.style.height = 'auto';
-    element.style.height = (element.scrollHeight) + 'px';
-}
 
 // Function to send each audio chunk to the server for processing
 function sendAudioChunk(audioChunk) {
@@ -613,12 +671,30 @@ function sendAudioChunk(audioChunk) {
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('user-input').value += data.transcribed_text;  // Append transcribed text
+        if (data.transcribed_text) {
+            appendTranscription(data.transcribed_text);
+        } else {
+            console.error('Error in transcription:', data.error);
+        }
     })
     .catch(error => {
         console.error('Error processing audio chunk:', error);
     });
 }
+
+// Function to append the transcribed text to the user input field
+function appendTranscription(transcribedText) {
+    let chatInput = document.getElementById('user-input');
+    chatInput.value += transcribedText + ' ';
+    autoExpandTextArea(chatInput);
+}
+
+// Automatically expand the input field as text is added
+function autoExpandTextArea(element) {
+    element.style.height = 'auto';
+    element.style.height = (element.scrollHeight) + 'px';
+}
+
 
 
 function loadTasks() {
@@ -1349,6 +1425,44 @@ function selectPipeline() {
         document.getElementById("top_p").value = 0.9;
         document.getElementById("top_k").value = 40;
     };
+
+
+    $(document).ready(function () {
+        // Check if a microphone was previously selected and stored in localStorage
+        const savedMicrophone = localStorage.getItem('selectedMicrophone');
+        
+        if (savedMicrophone) {
+            // Auto-select the saved microphone
+            navigator.mediaDevices.getUserMedia({ audio: { deviceId: { exact: savedMicrophone } } })
+                .then(stream => {
+                    mediaStream = stream;  // Use the saved media stream
+                    console.log('Media stream obtained from saved microphone:', mediaStream);
+                })
+                .catch(error => {
+                    console.error('Error accessing saved microphone:', error);
+                    alert('Could not access the saved microphone. Please select a different one.');
+                    // Show modal to re-select microphone if access fails
+                    $('#microphoneModal').modal('show');
+                });
+        } else {
+            // No microphone saved, show the modal for selection
+            navigator.mediaDevices.enumerateDevices().then(devices => {
+                let micSelect = $('#mic-selection');
+                devices.forEach(device => {
+                    if (device.kind === 'audioinput') {
+                        micSelect.append(new Option(device.label, device.deviceId));
+                    }
+                });
+                $('#microphoneModal').modal('show'); // Show the modal if no microphone is stored
+            });
+        }
+    });
+    $('#clear-mic-selection').click(function () {
+    localStorage.removeItem('selectedMicrophone');  // Clear saved microphone
+    alert('Microphone selection cleared. Please re-select your microphone.');
+    $('#microphoneModal').modal('show');  // Show modal for microphone selection again
+});
+
 </script>
 
 </body>

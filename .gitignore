@@ -2,3 +2,4 @@ venv/
 static/media/motivation/
 ffmpeg/
 ffprobe/
+saved_audio/

@@ -1,3 +1,4 @@
+import subprocess
 from flask import Flask, render_template, request, jsonify, Response, send_file
 import pyttsx3
 import os
@@ -12,7 +13,15 @@ from pydub import AudioSegment
 from io import BytesIO
 import ffmpeg  # ffmpeg-python
 
+
+import time
+from werkzeug.utils import secure_filename
+
 app = Flask(__name__)
+# Ensure a directory for saving audio files
+AUDIO_SAVE_DIR = os.path.join(os.getcwd(), "saved_audio")
+os.makedirs(AUDIO_SAVE_DIR, exist_ok=True)
+
 
 # Setup logging
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
@@ -172,6 +181,27 @@ def index():
 
     return render_template('index.html', system_message=system_message, llm_config=llm_config)
 
+
+
+@app.route('/save_audio', methods=['POST'])
+def save_audio():
+    if 'audio' not in request.files:
+        return jsonify({'error': 'No audio file provided'}), 400
+
+    audio_file = request.files['audio']
+    filename = request.form.get('filename')
+
+    if not filename:
+        timestamp = time.strftime('%Y%m%d-%H%M%S')
+        filename = f'audio_{timestamp}.webm'
+    else:
+        filename = secure_filename(filename)
+
+    # Save the audio file in the "saved_audio" directory
+    audio_save_path = os.path.join(AUDIO_SAVE_DIR, filename)
+    audio_file.save(audio_save_path)
+
+    return jsonify({'message': 'Audio saved', 'file_path': audio_save_path}), 200
 # Route to add a new task
 @app.route('/add_task', methods=['POST'])
 def add_task_route():
@@ -412,29 +442,33 @@ def submit_llm():
 
 @app.route('/process_audio_chunk', methods=['POST'])
 def process_audio_chunk():
-    if 'audio_chunk' not in request.files:
-        logging.warning("No audio chunk found in request")
-        return jsonify({"error": "No audio chunk found in request"}), 400
+    # Get the file path from the frontend
+    file_path = request.form.get('file_path')
+    
+    if not file_path or not os.path.exists(file_path):
+        return jsonify({"error": "No valid audio file path provided"}), 400
 
     try:
-        audio_chunk = request.files['audio_chunk']
-        # Force ffmpeg to interpret input as wav
-        audio = AudioSegment.from_file(BytesIO(audio_chunk.read()), format="wav")
-        audio_wav = BytesIO()
-        audio.export(audio_wav, format="wav")
-        audio_wav.seek(0)
+        logging.info(f"Processing audio chunk from file: {file_path}")
 
-        recognizer = sr.Recognizer()
-        logging.debug("Audio chunk received and converted to WAV format.")
-
-        with sr.AudioFile(audio_wav) as source:
-            audio_data = recognizer.record(source)
-            logging.info("Processing audio data with Google API...")
-            transcribed_text = recognizer.recognize_google(audio_data)
+        # Convert the saved file to .wav using ffmpeg
+        output_wav_path = file_path.replace(".webm", ".wav")
+        command = f"ffmpeg -i {file_path} -loglevel error -y {output_wav_path}"
+        process = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         
-        logging.info(f"Transcription successful: {transcribed_text}")
+        if process.returncode != 0:
+            logging.error(f"FFmpeg Error: {process.stderr.decode('utf-8')}")
+            return jsonify({"error": "FFmpeg failed to decode audio"}), 500
+
+        # Use the converted output for transcription
+        recognizer = sr.Recognizer()
+        with sr.AudioFile(output_wav_path) as source:
+            audio_data = recognizer.record(source)
+            transcribed_text = recognizer.recognize_google(audio_data)
+            logging.info(f"Transcription successful: {transcribed_text}")
+
         return jsonify({"transcribed_text": transcribed_text}), 200
-    
+
     except Exception as e:
         logging.error(f"Error processing audio chunk: {str(e)}")
         return jsonify({"error": str(e)}), 500
