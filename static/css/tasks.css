@@ -1,0 +1,154 @@
+  /* Custom styling for your layout */
+  #timer-output {
+    font-size: 1.5rem;
+    transition: font-size 0.5s;
+}
+
+#timer-output.running {
+    font-size: 3rem;
+    color: hsl(9, 100%, 64%);
+    text-align: center;
+}
+
+.accordion .card-header {
+    cursor: pointer;
+}
+
+#task-list {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.custom-checkbox label {
+    font-size: 18px;
+    margin: 0;
+}
+
+.btn-icon {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.btn-success, .btn-danger {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+
+.btn-primary {
+    width: 100%;
+    font-size: 1rem;
+    padding: 8px 0;
+}
+
+button i {
+    font-size: 1rem;
+}
+
+button {
+    font-size: 1rem;
+    padding: 8px 15px;
+}
+
+input[type="number"], input[type="text"] {
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.timer-input {
+    width: 100px;
+    margin-right: 5px;
+    text-align: center;
+    height: 40px;
+}
+
+.timer-btn {
+    width: 50px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-input {
+    resize: none;
+    height: auto;
+    max-height: 150px;
+    overflow-y: hidden;
+    transition: height 0.2s;
+}
+
+.chat-input:focus, .chat-input:valid {
+    overflow-y: auto;
+}
+
+.chat-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+/* Custom styling for your layout */
+#volume-meter {
+    height: 40px;
+    background-color: lightgrey;
+    margin-right: 10px;  /* Add padding between volume meter and input field */
+    display: none;
+}
+
+#volume-bar {
+    width: 0%;
+    height: 100%;
+    background-color: green;
+}
+
+
+.slider-value {
+    color: #4682B4;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.list-group-item.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.task-actions {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.dropdown-menu {
+    min-width: 120px;
+}
+
+.modal-header {
+    background-color: #0044cc; /* Change to your brand's primary color */
+    color: #fff; /* Change to contrast text color */
+}
+
+.modal-footer .btn-primary {
+    background-color: #0044cc; /* Primary button color */
+    border: none;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #ccc; /* Secondary button color */
+    border: none;
+}

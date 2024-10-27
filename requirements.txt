@@ -13,3 +13,5 @@ pyaudio            # For microphone input
 python-docx
 pygame                       # For playing sounds
 pydub
+textblob
+spacy

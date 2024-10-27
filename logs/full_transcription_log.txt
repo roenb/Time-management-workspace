@@ -1,0 +1,103 @@
+[2024-10-08 11:13:07] Transcription: 
+[2024-10-08 11:13:07] Transcription: 
+[2024-10-08 11:13:07] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 11:13:14] Transcription: 
+[2024-10-08 11:13:14] Transcription: 
+[2024-10-08 11:13:14] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 11:17:52] Transcription: 
+[2024-10-08 11:17:52] Transcription: 
+[2024-10-08 11:17:52] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 11:19:45] Transcription: 
+[2024-10-08 11:19:45] Transcription: 
+[2024-10-08 11:19:45] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 11:20:39] Transcription: 
+[2024-10-08 11:20:39] Transcription: 
+[2024-10-08 11:20:39] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 11:22:08] Transcription: are you recording if you recording why don't you have a volume
+[2024-10-08 11:22:08] Transcription: are you recording if you recording why don't you have a volume
+[2024-10-08 11:22:08] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 12:53:07] Transcription: 
+[2024-10-08 12:53:08] Transcription: 
+[2024-10-08 12:53:08] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 13:32:02] Transcription: 
+[2024-10-08 13:32:02] Transcription: 
+[2024-10-08 13:32:02] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 13:32:43] Transcription: 
+[2024-10-08 13:32:43] Transcription: 
+[2024-10-08 13:32:43] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 13:33:35] Transcription: 
+[2024-10-08 13:33:35] Transcription: 
+[2024-10-08 13:33:35] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:06:11] Transcription: 
+[2024-10-08 14:06:11] Transcription: 
+[2024-10-08 14:06:11] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:07:15] Transcription: 
+[2024-10-08 14:07:15] Transcription: 
+[2024-10-08 14:07:15] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:07:49] Transcription: 
+[2024-10-08 14:07:49] Transcription: 
+[2024-10-08 14:07:49] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:08:17] Transcription: 
+[2024-10-08 14:08:17] Transcription: 
+[2024-10-08 14:08:17] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:08:22] Transcription: 
+[2024-10-08 14:08:22] Transcription: 
+[2024-10-08 14:08:22] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:15:00] Transcription: 
+[2024-10-08 14:15:00] Transcription: 
+[2024-10-08 14:15:00] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:21:29] Transcription: 
+[2024-10-08 14:21:29] Transcription: 
+[2024-10-08 14:21:29] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:21:48] Transcription: 
+[2024-10-08 14:21:48] Transcription: 
+[2024-10-08 14:21:48] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:29:54] Transcription: 
+[2024-10-08 14:29:54] Transcription: 
+[2024-10-08 14:29:54] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:30:01] Transcription: 
+[2024-10-08 14:30:01] Transcription: 
+[2024-10-08 14:30:01] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:30:28] Transcription: is there anything anything through now
+[2024-10-08 14:30:28] Transcription: is there anything anything through now
+[2024-10-08 14:30:28] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:31:17] Transcription: 
+[2024-10-08 14:31:17] Transcription: 
+[2024-10-08 14:31:17] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:32:18] Transcription: no you're not
+[2024-10-08 14:32:18] Transcription: no you're not
+[2024-10-08 14:32:18] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-08 14:47:46] Transcription: ok so if it's green it's telling me that it's recording something
+[2024-10-08 14:47:46] Transcription: ok so if it's green it's telling me that it's recording something
+[2024-10-08 14:47:46] Transcription: 
+Additional Info: {'command_cache': []}
+[2024-10-09 10:35:43] Transcription: are you recording
+[2024-10-09 10:43:51] Transcription: are you listening stop recording
+[2024-10-09 10:44:09] Transcription: ok voice commands hello Marvin
+[2024-10-09 10:44:47] Transcription: press here
+[2024-10-09 11:02:49] Transcription: to an hour recording voice commands hello ma
+[2024-10-09 12:36:13] Transcription: are you recording
+[2024-10-09 12:47:52] Transcription: hello hello

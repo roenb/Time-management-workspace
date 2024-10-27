@@ -3,3 +3,7 @@ static/media/motivation/
 ffmpeg/
 ffprobe/
 saved_audio/
+/venv
+/venv/Lib
+venv/Scripts/numpy-config.exe
+venv/Scripts/f2py.exe
