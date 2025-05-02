@@ -189,31 +189,33 @@ function initializeMicrophone() {
 
     const selectedMicrophone = localStorage.getItem('selectedMicrophone') || $('#mic-selection').val();
 
-    // Fetch available audio devices
-    navigator.mediaDevices.enumerateDevices().then(devices => {
-        const micList = devices.filter(device => device.kind === 'audioinput');
-        const micAvailable = micList.some(device => device.deviceId === selectedMicrophone);
+    // Request microphone access first
+    navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(() => {
+            // Enumerate devices after getting permission
+            navigator.mediaDevices.enumerateDevices().then(devices => {
+                // ... (rest of your code)
 
-        if (micAvailable) {
-            // Initialize the selected microphone if available
-            navigator.mediaDevices.getUserMedia({ audio: { deviceId: { exact: selectedMicrophone } } })
-                .then((stream) => {
-                    mediaStream = stream;  // Store the media stream
-                    console.log('Media stream initialized:', stream);
-
-                    // Start recording immediately if always listening mode is enabled
-                    if (isAlwaysListening) {
-                        startRecording(mediaStream);
-                    }
-                })
-                .catch((error) => {
-                    console.error('Error accessing microphone:', error);
-                    alert('Microphone access error. Please check microphone settings.');
-                });
-        } else {
-            alert('Selected microphone is not available. Please select a valid microphone.');
-        }
-    });
+                if (micAvailable) {
+                    // ... (rest of your code)
+                } else {
+                    console.warn("Selected microphone not found. Using default device.");
+                    // Fallback to the default audio device
+                    navigator.mediaDevices.getUserMedia({ audio: true })
+                        .then((stream) => {
+                            // ... (rest of your code)
+                        })
+                        .catch((error) => {
+                            console.error("Error accessing microphone:", error);
+                            alert("Microphone access error. Please check microphone settings.");
+                        });
+                }
+            });
+        })
+        .catch(error => {
+            console.error("Error accessing microphone:", error);
+            alert("Microphone access error. Please check microphone settings.");
+        });
 }
 
 
@@ -388,6 +390,8 @@ function loadTasks() {
                                 <a class="dropdown-item select-task" href="#">Select</a>
                                 <a class="dropdown-item edit-task" href="#">Edit</a>
                                 <a class="dropdown-item delete-task" href="#" data-task-id="${task.id}">Delete</a>
+                                <a class="dropdown-item finish-task" href="#" data-task-id="${task.id}">Mark as Finished</a>
+
                             </div>
                         </div>
                     </li>
@@ -401,6 +405,12 @@ function loadTasks() {
         console.error('Error: Could not load tasks from backend');
     });
 }
+
+$(document).on('click', '.finish-task', function (e) {
+    e.preventDefault();
+    const taskId = $(this).data('task-id');
+    completeTask(taskId);  // Calls function already defined in your code
+});
 
 
 
@@ -600,7 +610,7 @@ document.getElementById('timer-form').addEventListener('submit', function (e) {
                 speakText("You're doing great! Keep it up!");
                 document.getElementById('notification-sound').play();
             } else if (totalSeconds === Math.floor(originalSeconds * 0.331)) {
-                speakText("Almost there! Push through to the finish.");
+                speakText("Almost there! Review what you accomplished and plan your next tasks.");
                 document.getElementById('notification-sound').play();
             }
         }, 1000);  // Timer updates every second
@@ -686,11 +696,14 @@ function populateVoiceList() {
     });
 
     const savedVoiceIndex = localStorage.getItem('selectedVoice') || 0;
-    voiceSelect.value = savedVoiceIndex;
-    console.log(`Voice selected: ${filteredVoices[savedVoiceIndex]?.name || "None"}`);
+
+    // Validate the saved index after filtering voices
+    const validVoiceIndex = Math.min(savedVoiceIndex, filteredVoices.length - 1);
+    voiceSelect.value = validVoiceIndex;
+
+    console.log(`Voice selected: ${filteredVoices[validVoiceIndex]?.name || "None"}`);
 }
 
-// Function to speak text with the selected voice
 function speakText(text) {
     const voiceSelect = document.getElementById('voice-selection');
     const selectedVoiceIndex = parseInt(voiceSelect ? voiceSelect.value : 0, 10);
@@ -699,91 +712,49 @@ function speakText(text) {
     const rate = parseFloat(localStorage.getItem('voiceRate')) || 1.0;
     const pitch = parseFloat(localStorage.getItem('voicePitch')) || 1.0;
 
-    // Ensure selected voice exists and matches language
-    const selectedVoice = voices.find((voice, index) => 
-        index === selectedVoiceIndex && voice.lang.startsWith(selectedLanguage)
-    );
+    // Check if the voice index is valid and if the voice language matches the selected language
+    if (selectedVoiceIndex >= 0 && selectedVoiceIndex < voices.length && voices[selectedVoiceIndex].lang.startsWith(selectedLanguage)) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.voice = voices[selectedVoiceIndex];
+        utterance.lang = selectedLanguage;
+        utterance.rate = rate;
+        utterance.pitch = pitch;
 
-    if (!selectedVoice) {
-        console.error(`Voice mismatch or invalid selection. Expected: ${selectedLanguage}, Selected Index: ${selectedVoiceIndex}`);
-        console.warn("Resetting to default voice due to mismatch.");
-        localStorage.removeItem('selectedVoice');  // Clear erroneous selection
-        populateVoiceList();  // Refresh list to correct mismatch
-        return;
+        // Event listeners for speech start, end, and error
+        utterance.onstart = function () {
+            console.log('Speech started');
+        };
+
+        utterance.onend = function () {
+            console.log('Speech finished');
+        };
+
+        utterance.onerror = function (event) {
+            console.error('Error during speech synthesis:', event.error);
+        };
+
+        speechSynthesis.speak(utterance);
+    } else {
+        // Handle the case where the voice is not found
+        console.error('Voice not found for language ' + selectedLanguage + ' at index ' + selectedVoiceIndex);
+
+        // Optionally, provide a fallback mechanism
+        // For example, you could try to use the default voice for the language
+        const defaultVoice = voices.find(voice => voice.lang.startsWith(selectedLanguage) && voice.default);
+        if (defaultVoice) {
+            console.log('Using default voice:', defaultVoice.name);
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.voice = defaultVoice;
+            speechSynthesis.speak(utterance);
+        } else {
+            // If no suitable voice is found, you could display an error message to the user
+            alert('No suitable voice found for the selected language.');
+        }
     }
-
-    console.log(`Speaking with voice: ${selectedVoice.name} (${selectedVoice.lang}), Rate: ${rate}, Pitch: ${pitch}`);
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = selectedVoice;
-    utterance.lang = selectedVoice.lang;
-    utterance.rate = rate;
-    utterance.pitch = pitch;
-
-    utterance.onend = function () {
-        console.log("Speech finished.");
-    };
-
-    utterance.onerror = function (event) {
-        console.error('Error during speech synthesis:', event.error);
-    };
-
-    // Start speaking
-    speechSynthesis.speak(utterance);
 }
 
 // Populate voices initially and when voices change
 speechSynthesis.onvoiceschanged = populateVoiceList;
-
-
-
-
-// Function to speak text with the selected voice
-function speakText(text) {
-    const voiceSelect = document.getElementById('voice-selection');
-    const selectedVoiceIndex = parseInt(voiceSelect ? voiceSelect.value : 0, 10);
-    const voices = speechSynthesis.getVoices();
-
-    const selectedLanguage = localStorage.getItem('voiceLanguage') || 'en-US';
-    const rate = parseFloat(localStorage.getItem('voiceRate')) || 1.0;
-    const pitch = parseFloat(localStorage.getItem('voicePitch')) || 1.0;
-
-    // Verify if selected voice index is valid
-    if (!voices[selectedVoiceIndex]) {
-        console.error("Invalid voice selection.");
-        return;
-    }
-
-    const selectedVoice = voices[selectedVoiceIndex];
-
-    // Ensure the voice matches the chosen language
-    if (!selectedVoice.lang.startsWith(selectedLanguage)) {
-        console.error(`Selected voice language mismatch. Expected: ${selectedLanguage}, Got: ${selectedVoice.lang}`);
-        return;
-    }
-
-    console.log(`Speaking with voice: ${selectedVoice.name}, Language: ${selectedVoice.lang}, Rate: ${rate}, Pitch: ${pitch}`);
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = selectedVoice;
-    utterance.lang = selectedVoice.lang;
-    utterance.rate = rate;
-    utterance.pitch = pitch;
-
-    utterance.onend = function () {
-        console.log("Speech finished.");
-    };
-
-    utterance.onerror = function (event) {
-        console.error('Error during speech synthesis:', event.error);
-    };
-
-    // Start speaking
-    speechSynthesis.speak(utterance);
-}
-
-
-
 
 
 // Populate sliders with respective values from localStorage
@@ -1178,7 +1149,9 @@ $(document).on('click', '.select-task', function () {
                         </div>
                         <div id="collapseSubtasks" class="collapse">
                             <div class="card-body">
-                                ${task.subtasks.length > 0 ? task.subtasks.map((subtask, index) => `<p>${index + 1}. ${subtask}</p>`).join('') : "None"}
+                                <ul>
+                                    ${task.subtasks.length > 0 ? task.subtasks.map((subtask, index) => `<li>${index + 1}. ${subtask}</li>`).join('') : "<li>None</li>"}
+                                </ul>
                             </div>
                         </div>
                     </div>

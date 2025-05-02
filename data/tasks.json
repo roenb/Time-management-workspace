@@ -1,8 +1,134 @@
 {
     "tasks": [
         {
-            "id": 1,
-            "title": "",
+            "id": 2,
+            "title": "debug json hanlder logs",
+            "description": "",
+            "subtasks": [],
+            "completed": false,
+            "acceptance_criteria": [],
+            "test_cases": [],
+            "uml_diagram": "",
+            "ascii_diagram": "",
+            "additional_info": "",
+            "related_tasks": [],
+            "context": "",
+            "recommended_llm_settings": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500,
+                "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
+            }
+        },
+        {
+            "id": 3,
+            "title": "debug json hanlder logs",
+            "description": "",
+            "subtasks": [],
+            "completed": false,
+            "acceptance_criteria": [],
+            "test_cases": [],
+            "uml_diagram": "",
+            "ascii_diagram": "",
+            "additional_info": "",
+            "related_tasks": [],
+            "context": "",
+            "recommended_llm_settings": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500,
+                "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
+            }
+        },
+        {
+            "id": 4,
+            "title": "debug system calls to llm containers",
+            "description": "",
+            "subtasks": [],
+            "completed": false,
+            "acceptance_criteria": [],
+            "test_cases": [],
+            "uml_diagram": "",
+            "ascii_diagram": "",
+            "additional_info": "",
+            "related_tasks": [],
+            "context": "",
+            "recommended_llm_settings": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500,
+                "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
+            }
+        },
+        {
+            "id": 5,
+            "title": "debug system calls to llm containers",
+            "description": "",
+            "subtasks": [],
+            "completed": false,
+            "acceptance_criteria": [],
+            "test_cases": [],
+            "uml_diagram": "",
+            "ascii_diagram": "",
+            "additional_info": "",
+            "related_tasks": [],
+            "context": "",
+            "recommended_llm_settings": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500,
+                "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
+            }
+        },
+        {
+            "id": 6,
+            "title": "Subtask 1.1: Install dependencies - Description: Install Python, FastAPI, Jinja2, and other required libraries. - Notes: Use `pipenv` or `virtualenv` for package management.",
+            "description": "",
+            "subtasks": [],
+            "completed": false,
+            "acceptance_criteria": [],
+            "test_cases": [],
+            "uml_diagram": "",
+            "ascii_diagram": "",
+            "additional_info": "",
+            "related_tasks": [],
+            "context": "",
+            "recommended_llm_settings": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500,
+                "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
+            }
+        },
+        {
+            "id": 7,
+            "title": "fix delete task",
+            "description": "",
+            "subtasks": [],
+            "completed": false,
+            "acceptance_criteria": [],
+            "test_cases": [],
+            "uml_diagram": "",
+            "ascii_diagram": "",
+            "additional_info": "",
+            "related_tasks": [],
+            "context": "",
+            "recommended_llm_settings": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "top_k": 40,
+                "max_tokens": 500,
+                "system_message": "Generate subtasks, test cases, acceptance criteria, and insights."
+            }
+        },
+        {
+            "id": 8,
+            "title": "fix delete task",
             "description": "",
             "subtasks": [],
             "completed": false,

@@ -132504,3 +132504,473 @@ Output file #0 does not contain any stream
 2024-10-26 08:12:19,399:INFO:127.0.0.1 - - [26/Oct/2024 08:12:19] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
 2024-10-26 08:12:21,102:INFO:127.0.0.1 - - [26/Oct/2024 08:12:21] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
 2024-10-26 08:15:20,608:INFO:127.0.0.1 - - [26/Oct/2024 08:15:20] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-15 06:05:25,071:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.178.36:5000
+2025-02-15 06:05:25,112:INFO:[33mPress CTRL+C to quit[0m
+2025-02-15 06:05:25,115:INFO: * Restarting with stat
+2025-02-15 06:05:28,720:WARNING: * Debugger is active!
+2025-02-15 06:05:28,731:INFO: * Debugger PIN: 926-336-710
+2025-02-15 06:41:18,247:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2025-02-15 06:41:19,396:INFO: * Restarting with stat
+2025-02-15 06:55:56,774:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-02-15 06:55:56,774:INFO:[33mPress CTRL+C to quit[0m
+2025-02-15 06:55:56,779:INFO: * Restarting with stat
+2025-02-15 06:56:00,951:WARNING: * Debugger is active!
+2025-02-15 06:56:00,964:INFO: * Debugger PIN: 139-136-677
+2025-02-15 07:19:28,875:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-02-15 07:19:28,876:INFO:[33mPress CTRL+C to quit[0m
+2025-02-15 07:19:28,878:INFO: * Restarting with stat
+2025-02-15 07:19:33,846:WARNING: * Debugger is active!
+2025-02-15 07:19:33,858:INFO: * Debugger PIN: 139-136-677
+2025-02-15 07:30:18,687:INFO:127.0.0.1 - - [15/Feb/2025 07:30:18] "GET / HTTP/1.1" 200 -
+2025-02-15 07:30:18,941:INFO:127.0.0.1 - - [15/Feb/2025 07:30:18] "GET /static/css/tasks.css HTTP/1.1" 200 -
+2025-02-15 07:30:19,105:INFO:127.0.0.1 - - [15/Feb/2025 07:30:19] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:30:19,120:INFO:127.0.0.1 - - [15/Feb/2025 07:30:19] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-15 07:30:19,131:INFO:127.0.0.1 - - [15/Feb/2025 07:30:19] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:30:19,138:INFO:127.0.0.1 - - [15/Feb/2025 07:30:19] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:30:19,167:INFO:127.0.0.1 - - [15/Feb/2025 07:30:19] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-15 07:30:19,461:INFO:127.0.0.1 - - [15/Feb/2025 07:30:19] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-15 07:30:19,573:INFO:127.0.0.1 - - [15/Feb/2025 07:30:19] "GET /static/media/logo-crisp-large.ico HTTP/1.1" 200 -
+2025-02-15 07:30:19,769:INFO:127.0.0.1 - - [15/Feb/2025 07:30:19] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-15 07:30:39,189:INFO:127.0.0.1 - - [15/Feb/2025 07:30:39] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-15 07:30:39,190:INFO:127.0.0.1 - - [15/Feb/2025 07:30:39] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:30:39,447:INFO:127.0.0.1 - - [15/Feb/2025 07:30:39] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:30:58,752:INFO:127.0.0.1 - - [15/Feb/2025 07:30:58] "POST /add_task HTTP/1.1" 200 -
+2025-02-15 07:30:59,046:INFO:127.0.0.1 - - [15/Feb/2025 07:30:59] "POST /add_task HTTP/1.1" 200 -
+2025-02-15 07:31:28,032:INFO:127.0.0.1 - - [15/Feb/2025 07:31:28] "GET /static/images/icon.png HTTP/1.1" 200 -
+2025-02-15 07:32:19,247:INFO:127.0.0.1 - - [15/Feb/2025 07:32:19] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:32:28,728:INFO:127.0.0.1 - - [15/Feb/2025 07:32:28] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-15 07:33:11,559:INFO:127.0.0.1 - - [15/Feb/2025 07:33:11] "GET / HTTP/1.1" 200 -
+2025-02-15 07:33:11,947:INFO:127.0.0.1 - - [15/Feb/2025 07:33:11] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-15 07:33:11,952:INFO:127.0.0.1 - - [15/Feb/2025 07:33:11] "[36mGET /static/js/tasks.js HTTP/1.1[0m" 304 -
+2025-02-15 07:33:12,029:INFO:127.0.0.1 - - [15/Feb/2025 07:33:12] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-15 07:33:12,032:INFO:127.0.0.1 - - [15/Feb/2025 07:33:12] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:33:12,033:INFO:127.0.0.1 - - [15/Feb/2025 07:33:12] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-15 07:33:12,211:INFO:127.0.0.1 - - [15/Feb/2025 07:33:12] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:33:12,302:INFO:127.0.0.1 - - [15/Feb/2025 07:33:12] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:33:12,309:INFO:127.0.0.1 - - [15/Feb/2025 07:33:12] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-15 07:33:12,635:INFO:127.0.0.1 - - [15/Feb/2025 07:33:12] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-15 07:33:13,561:INFO:127.0.0.1 - - [15/Feb/2025 07:33:13] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:33:13,872:INFO:127.0.0.1 - - [15/Feb/2025 07:33:13] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-15 07:33:18,592:INFO:127.0.0.1 - - [15/Feb/2025 07:33:18] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-15 07:33:43,555:INFO:127.0.0.1 - - [15/Feb/2025 07:33:43] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:33:56,197:INFO:127.0.0.1 - - [15/Feb/2025 07:33:56] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-15 07:36:14,572:INFO:127.0.0.1 - - [15/Feb/2025 07:36:14] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:47:31,584:INFO:127.0.0.1 - - [15/Feb/2025 07:47:31] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-15 07:48:16,550:INFO:127.0.0.1 - - [15/Feb/2025 07:48:16] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:49:56,872:INFO:127.0.0.1 - - [15/Feb/2025 07:49:56] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-15 07:49:58,547:INFO:127.0.0.1 - - [15/Feb/2025 07:49:58] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-16 03:32:55,860:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-02-16 03:32:55,872:INFO:[33mPress CTRL+C to quit[0m
+2025-02-16 03:32:55,874:INFO: * Restarting with stat
+2025-02-16 03:32:59,789:WARNING: * Debugger is active!
+2025-02-16 03:32:59,800:INFO: * Debugger PIN: 139-136-677
+2025-02-16 04:39:03,844:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-02-16 04:39:03,844:INFO:[33mPress CTRL+C to quit[0m
+2025-02-16 04:39:03,845:INFO: * Restarting with stat
+2025-02-16 04:39:07,863:WARNING: * Debugger is active!
+2025-02-16 04:39:07,873:INFO: * Debugger PIN: 139-136-677
+2025-02-16 04:39:27,895:INFO:127.0.0.1 - - [16/Feb/2025 04:39:27] "GET / HTTP/1.1" 200 -
+2025-02-16 04:39:28,259:INFO:127.0.0.1 - - [16/Feb/2025 04:39:28] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-16 04:39:28,275:INFO:127.0.0.1 - - [16/Feb/2025 04:39:28] "[36mGET /static/js/tasks.js HTTP/1.1[0m" 304 -
+2025-02-16 04:39:28,282:INFO:127.0.0.1 - - [16/Feb/2025 04:39:28] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-16 04:39:28,345:INFO:127.0.0.1 - - [16/Feb/2025 04:39:28] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-16 04:39:28,356:INFO:127.0.0.1 - - [16/Feb/2025 04:39:28] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-16 04:39:28,365:INFO:127.0.0.1 - - [16/Feb/2025 04:39:28] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-16 04:39:28,656:INFO:127.0.0.1 - - [16/Feb/2025 04:39:28] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-16 04:39:28,688:INFO:127.0.0.1 - - [16/Feb/2025 04:39:28] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-16 04:39:29,007:INFO:127.0.0.1 - - [16/Feb/2025 04:39:29] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-16 04:42:54,219:INFO:127.0.0.1 - - [16/Feb/2025 04:42:54] "POST /add_task HTTP/1.1" 200 -
+2025-02-16 04:42:54,526:INFO:127.0.0.1 - - [16/Feb/2025 04:42:54] "POST /add_task HTTP/1.1" 200 -
+2025-02-16 04:43:01,808:INFO:127.0.0.1 - - [16/Feb/2025 04:43:01] "[33mPOST /delete_task/1 HTTP/1.1[0m" 404 -
+2025-02-16 04:43:46,375:INFO:127.0.0.1 - - [16/Feb/2025 04:43:46] "POST /submit_llm HTTP/1.1" 200 -
+2025-02-27 03:22:50,125:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-02-27 03:22:50,187:INFO:[33mPress CTRL+C to quit[0m
+2025-02-27 03:22:50,189:INFO: * Restarting with stat
+2025-02-27 03:22:54,334:WARNING: * Debugger is active!
+2025-02-27 03:22:54,347:INFO: * Debugger PIN: 139-136-677
+2025-02-27 05:16:56,290:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2025-02-27 05:16:57,256:INFO: * Restarting with stat
+2025-02-27 05:17:01,817:WARNING: * Debugger is active!
+2025-02-27 05:17:01,831:INFO: * Debugger PIN: 139-136-677
+2025-02-27 05:18:12,937:INFO:127.0.0.1 - - [27/Feb/2025 05:18:12] "GET / HTTP/1.1" 200 -
+2025-02-27 05:18:13,283:INFO:127.0.0.1 - - [27/Feb/2025 05:18:13] "GET /static/css/tasks.css HTTP/1.1" 200 -
+2025-02-27 05:18:13,365:INFO:127.0.0.1 - - [27/Feb/2025 05:18:13] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 05:18:13,381:INFO:127.0.0.1 - - [27/Feb/2025 05:18:13] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 05:18:13,389:INFO:127.0.0.1 - - [27/Feb/2025 05:18:13] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 05:18:13,399:INFO:127.0.0.1 - - [27/Feb/2025 05:18:13] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 05:18:13,429:INFO:127.0.0.1 - - [27/Feb/2025 05:18:13] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-27 05:18:13,712:INFO:127.0.0.1 - - [27/Feb/2025 05:18:13] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 05:18:13,799:INFO:127.0.0.1 - - [27/Feb/2025 05:18:13] "GET /static/media/logo-crisp-large.ico HTTP/1.1" 200 -
+2025-02-27 05:18:14,020:INFO:127.0.0.1 - - [27/Feb/2025 05:18:14] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 05:18:14,351:INFO:127.0.0.1 - - [27/Feb/2025 05:18:14] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 07:49:16,392:INFO:127.0.0.1 - - [27/Feb/2025 07:49:16] "GET /static/images/icon.png HTTP/1.1" 200 -
+2025-02-27 08:00:38,325:INFO:127.0.0.1 - - [27/Feb/2025 08:00:38] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 08:00:39,335:INFO:127.0.0.1 - - [27/Feb/2025 08:00:39] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 08:00:40,402:INFO:127.0.0.1 - - [27/Feb/2025 08:00:40] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 08:00:46,771:INFO:127.0.0.1 - - [27/Feb/2025 08:00:46] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 08:00:49,556:INFO:127.0.0.1 - - [27/Feb/2025 08:00:49] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:00:49,556:INFO:127.0.0.1 - - [27/Feb/2025 08:00:49] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:00:49,815:INFO:127.0.0.1 - - [27/Feb/2025 08:00:49] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:01:00,636:INFO:127.0.0.1 - - [27/Feb/2025 08:01:00] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-27 08:02:29,566:INFO:127.0.0.1 - - [27/Feb/2025 08:02:29] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:04:10,564:INFO:127.0.0.1 - - [27/Feb/2025 08:04:10] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:05:50,562:INFO:127.0.0.1 - - [27/Feb/2025 08:05:50] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:05:50,816:INFO:127.0.0.1 - - [27/Feb/2025 08:05:50] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:05:52,255:INFO:127.0.0.1 - - [27/Feb/2025 08:05:52] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:05:52,569:INFO:127.0.0.1 - - [27/Feb/2025 08:05:52] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:11:50,361:INFO:127.0.0.1 - - [27/Feb/2025 08:11:50] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 08:14:03,821:INFO:127.0.0.1 - - [27/Feb/2025 08:14:03] "GET / HTTP/1.1" 200 -
+2025-02-27 08:14:04,082:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-27 08:14:04,189:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 08:14:04,195:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:14:04,278:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:14:04,280:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:14:04,280:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-27 08:14:04,518:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 08:14:04,528:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:14:04,544:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:14:04,860:INFO:127.0.0.1 - - [27/Feb/2025 08:14:04] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:14:06,289:INFO:127.0.0.1 - - [27/Feb/2025 08:14:06] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:14:06,601:INFO:127.0.0.1 - - [27/Feb/2025 08:14:06] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:14:55,989:INFO:127.0.0.1 - - [27/Feb/2025 08:14:55] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 08:15:15,360:INFO:127.0.0.1 - - [27/Feb/2025 08:15:15] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 08:19:28,619:INFO:127.0.0.1 - - [27/Feb/2025 08:19:28] "GET / HTTP/1.1" 200 -
+2025-02-27 08:19:28,882:INFO:127.0.0.1 - - [27/Feb/2025 08:19:28] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-27 08:19:28,984:INFO:127.0.0.1 - - [27/Feb/2025 08:19:28] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 08:19:28,989:INFO:127.0.0.1 - - [27/Feb/2025 08:19:28] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:19:29,069:INFO:127.0.0.1 - - [27/Feb/2025 08:19:29] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:19:29,072:INFO:127.0.0.1 - - [27/Feb/2025 08:19:29] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-27 08:19:29,072:INFO:127.0.0.1 - - [27/Feb/2025 08:19:29] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:19:29,299:INFO:127.0.0.1 - - [27/Feb/2025 08:19:29] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 08:19:29,310:INFO:127.0.0.1 - - [27/Feb/2025 08:19:29] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:19:29,317:INFO:127.0.0.1 - - [27/Feb/2025 08:19:29] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:19:29,642:INFO:127.0.0.1 - - [27/Feb/2025 08:19:29] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:19:45,015:INFO:127.0.0.1 - - [27/Feb/2025 08:19:45] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:19:45,317:INFO:127.0.0.1 - - [27/Feb/2025 08:19:45] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:23:01,130:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-02-27 08:23:01,131:INFO:[33mPress CTRL+C to quit[0m
+2025-02-27 08:23:01,132:INFO: * Restarting with stat
+2025-02-27 08:23:04,993:WARNING: * Debugger is active!
+2025-02-27 08:23:05,005:INFO: * Debugger PIN: 139-136-677
+2025-02-27 08:24:36,766:INFO:127.0.0.1 - - [27/Feb/2025 08:24:36] "GET / HTTP/1.1" 200 -
+2025-02-27 08:24:37,104:INFO:127.0.0.1 - - [27/Feb/2025 08:24:37] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-27 08:24:37,147:INFO:127.0.0.1 - - [27/Feb/2025 08:24:37] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 08:24:37,147:INFO:127.0.0.1 - - [27/Feb/2025 08:24:37] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:24:37,230:INFO:127.0.0.1 - - [27/Feb/2025 08:24:37] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:24:37,232:INFO:127.0.0.1 - - [27/Feb/2025 08:24:37] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:24:37,233:INFO:127.0.0.1 - - [27/Feb/2025 08:24:37] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-27 08:24:37,485:INFO:127.0.0.1 - - [27/Feb/2025 08:24:37] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:24:37,495:INFO:127.0.0.1 - - [27/Feb/2025 08:24:37] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:24:37,812:INFO:127.0.0.1 - - [27/Feb/2025 08:24:37] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:24:55,453:INFO:127.0.0.1 - - [27/Feb/2025 08:24:55] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:24:55,758:INFO:127.0.0.1 - - [27/Feb/2025 08:24:55] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:24:56,067:INFO:127.0.0.1 - - [27/Feb/2025 08:24:56] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:24:58,454:INFO:127.0.0.1 - - [27/Feb/2025 08:24:58] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 08:25:07,996:INFO:127.0.0.1 - - [27/Feb/2025 08:25:07] "GET / HTTP/1.1" 200 -
+2025-02-27 08:25:08,250:INFO:127.0.0.1 - - [27/Feb/2025 08:25:08] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-27 08:25:08,354:INFO:127.0.0.1 - - [27/Feb/2025 08:25:08] "[36mGET /static/js/tasks.js HTTP/1.1[0m" 304 -
+2025-02-27 08:25:08,354:INFO:127.0.0.1 - - [27/Feb/2025 08:25:08] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:25:08,431:INFO:127.0.0.1 - - [27/Feb/2025 08:25:08] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:25:08,432:INFO:127.0.0.1 - - [27/Feb/2025 08:25:08] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-27 08:25:08,680:INFO:127.0.0.1 - - [27/Feb/2025 08:25:08] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:25:08,685:INFO:127.0.0.1 - - [27/Feb/2025 08:25:08] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:25:09,007:INFO:127.0.0.1 - - [27/Feb/2025 08:25:09] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:25:09,014:INFO:127.0.0.1 - - [27/Feb/2025 08:25:09] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:25:11,398:INFO:127.0.0.1 - - [27/Feb/2025 08:25:11] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:25:11,706:INFO:127.0.0.1 - - [27/Feb/2025 08:25:11] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:25:51,115:INFO:127.0.0.1 - - [27/Feb/2025 08:25:51] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:27:36,156:INFO:127.0.0.1 - - [27/Feb/2025 08:27:36] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:27:38,434:INFO:127.0.0.1 - - [27/Feb/2025 08:27:38] "GET / HTTP/1.1" 200 -
+2025-02-27 08:27:38,812:INFO:127.0.0.1 - - [27/Feb/2025 08:27:38] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-27 08:27:38,812:INFO:127.0.0.1 - - [27/Feb/2025 08:27:38] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 08:27:38,885:INFO:127.0.0.1 - - [27/Feb/2025 08:27:38] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:27:38,886:INFO:127.0.0.1 - - [27/Feb/2025 08:27:38] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-27 08:27:39,074:INFO:127.0.0.1 - - [27/Feb/2025 08:27:39] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:27:39,167:INFO:127.0.0.1 - - [27/Feb/2025 08:27:39] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:27:39,176:INFO:127.0.0.1 - - [27/Feb/2025 08:27:39] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:27:39,493:INFO:127.0.0.1 - - [27/Feb/2025 08:27:39] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:27:45,496:INFO:127.0.0.1 - - [27/Feb/2025 08:27:45] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:27:45,815:INFO:127.0.0.1 - - [27/Feb/2025 08:27:45] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:29:00,357:INFO:127.0.0.1 - - [27/Feb/2025 08:29:00] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:29:18,890:INFO:127.0.0.1 - - [27/Feb/2025 08:29:18] "GET / HTTP/1.1" 200 -
+2025-02-27 08:29:19,253:INFO:127.0.0.1 - - [27/Feb/2025 08:29:19] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-27 08:29:19,253:INFO:127.0.0.1 - - [27/Feb/2025 08:29:19] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 08:29:19,330:INFO:127.0.0.1 - - [27/Feb/2025 08:29:19] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:29:19,332:INFO:127.0.0.1 - - [27/Feb/2025 08:29:19] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-27 08:29:19,519:INFO:127.0.0.1 - - [27/Feb/2025 08:29:19] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:29:19,611:INFO:127.0.0.1 - - [27/Feb/2025 08:29:19] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:29:19,616:INFO:127.0.0.1 - - [27/Feb/2025 08:29:19] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:29:19,951:INFO:127.0.0.1 - - [27/Feb/2025 08:29:19] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:29:19,968:INFO:127.0.0.1 - - [27/Feb/2025 08:29:19] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:29:23,253:INFO:127.0.0.1 - - [27/Feb/2025 08:29:23] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:29:53,531:INFO:127.0.0.1 - - [27/Feb/2025 08:29:53] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:31:03,541:INFO:127.0.0.1 - - [27/Feb/2025 08:31:03] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:32:44,536:INFO:127.0.0.1 - - [27/Feb/2025 08:32:44] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:34:24,767:INFO:127.0.0.1 - - [27/Feb/2025 08:34:24] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:34:26,540:INFO:127.0.0.1 - - [27/Feb/2025 08:34:26] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:37:58,257:INFO:127.0.0.1 - - [27/Feb/2025 08:37:58] "POST /submit_llm HTTP/1.1" 200 -
+2025-02-27 08:52:30,615:INFO:127.0.0.1 - - [27/Feb/2025 08:52:30] "POST /add_task HTTP/1.1" 200 -
+2025-02-27 08:52:30,616:INFO:127.0.0.1 - - [27/Feb/2025 08:52:30] "POST /add_task HTTP/1.1" 200 -
+2025-02-27 08:52:47,494:INFO:127.0.0.1 - - [27/Feb/2025 08:52:47] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 08:55:09,561:INFO:127.0.0.1 - - [27/Feb/2025 08:55:09] "GET / HTTP/1.1" 200 -
+2025-02-27 08:55:09,824:INFO:127.0.0.1 - - [27/Feb/2025 08:55:09] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-27 08:55:09,942:INFO:127.0.0.1 - - [27/Feb/2025 08:55:09] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-27 08:55:09,942:INFO:127.0.0.1 - - [27/Feb/2025 08:55:09] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:55:10,041:INFO:127.0.0.1 - - [27/Feb/2025 08:55:10] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:55:10,043:INFO:127.0.0.1 - - [27/Feb/2025 08:55:10] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:55:10,044:INFO:127.0.0.1 - - [27/Feb/2025 08:55:10] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-27 08:55:10,287:INFO:127.0.0.1 - - [27/Feb/2025 08:55:10] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-27 08:55:10,298:INFO:127.0.0.1 - - [27/Feb/2025 08:55:10] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-27 08:55:10,613:INFO:127.0.0.1 - - [27/Feb/2025 08:55:10] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-27 08:55:22,587:INFO:127.0.0.1 - - [27/Feb/2025 08:55:22] "[33mPOST /delete_task/5 HTTP/1.1[0m" 404 -
+2025-02-27 10:46:06,370:INFO:127.0.0.1 - - [27/Feb/2025 10:46:06] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 14:16:48,876:INFO:127.0.0.1 - - [27/Feb/2025 14:16:48] "[33mPOST /delete_task/5 HTTP/1.1[0m" 404 -
+2025-02-27 14:21:19,823:INFO:127.0.0.1 - - [27/Feb/2025 14:21:19] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 17:23:49,813:INFO:127.0.0.1 - - [27/Feb/2025 17:23:49] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-27 18:01:04,812:INFO:127.0.0.1 - - [27/Feb/2025 18:01:04] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-28 04:32:01,444:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-02-28 04:32:01,543:INFO:[33mPress CTRL+C to quit[0m
+2025-02-28 04:32:01,545:INFO: * Restarting with stat
+2025-02-28 04:32:06,090:WARNING: * Debugger is active!
+2025-02-28 04:32:06,101:INFO: * Debugger PIN: 139-136-677
+2025-02-28 04:32:47,033:INFO:127.0.0.1 - - [28/Feb/2025 04:32:47] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-28 08:44:28,446:INFO:127.0.0.1 - - [28/Feb/2025 08:44:28] "GET / HTTP/1.1" 200 -
+2025-02-28 08:44:28,691:INFO:127.0.0.1 - - [28/Feb/2025 08:44:28] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-02-28 08:44:28,822:INFO:127.0.0.1 - - [28/Feb/2025 08:44:28] "[36mGET /static/js/tasks.js HTTP/1.1[0m" 304 -
+2025-02-28 08:44:28,829:INFO:127.0.0.1 - - [28/Feb/2025 08:44:28] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-02-28 08:44:28,879:INFO:127.0.0.1 - - [28/Feb/2025 08:44:28] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-28 08:44:28,911:INFO:127.0.0.1 - - [28/Feb/2025 08:44:28] "GET /get_tasks HTTP/1.1" 200 -
+2025-02-28 08:44:28,931:INFO:127.0.0.1 - - [28/Feb/2025 08:44:28] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-02-28 08:44:29,142:INFO:127.0.0.1 - - [28/Feb/2025 08:44:29] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-02-28 08:44:29,162:INFO:127.0.0.1 - - [28/Feb/2025 08:44:29] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-02-28 08:44:29,173:INFO:127.0.0.1 - - [28/Feb/2025 08:44:29] "GET /mantra_text HTTP/1.1" 200 -
+2025-02-28 08:44:29,531:INFO:127.0.0.1 - - [28/Feb/2025 08:44:29] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-02-28 08:55:45,234:INFO:127.0.0.1 - - [28/Feb/2025 08:55:45] "POST /submit_llm HTTP/1.1" 200 -
+2025-02-28 09:42:55,943:INFO:127.0.0.1 - - [28/Feb/2025 09:42:55] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-02-28 10:49:48,950:INFO:127.0.0.1 - - [28/Feb/2025 10:49:48] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-01 03:34:50,880:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-03-01 03:34:50,900:INFO:[33mPress CTRL+C to quit[0m
+2025-03-01 03:34:50,902:INFO: * Restarting with stat
+2025-03-01 03:34:54,823:WARNING: * Debugger is active!
+2025-03-01 03:34:54,834:INFO: * Debugger PIN: 139-136-677
+2025-03-01 03:34:55,034:INFO:127.0.0.1 - - [01/Mar/2025 03:34:55] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-01 03:34:55,041:INFO:127.0.0.1 - - [01/Mar/2025 03:34:55] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-01 03:34:55,051:INFO:127.0.0.1 - - [01/Mar/2025 03:34:55] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-01 03:49:17,823:INFO:127.0.0.1 - - [01/Mar/2025 03:49:17] "GET / HTTP/1.1" 200 -
+2025-03-01 03:49:18,164:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-03-01 03:49:18,207:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "[36mGET /static/js/tasks.js HTTP/1.1[0m" 304 -
+2025-03-01 03:49:18,207:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-01 03:49:18,284:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-01 03:49:18,310:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-01 03:49:18,484:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-01 03:49:18,515:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-01 03:49:18,539:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-01 03:49:18,540:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-01 03:49:18,796:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-01 03:49:18,825:INFO:127.0.0.1 - - [01/Mar/2025 03:49:18] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-01 03:49:19,138:INFO:127.0.0.1 - - [01/Mar/2025 03:49:19] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-03-01 05:17:50,939:INFO:127.0.0.1 - - [01/Mar/2025 05:17:50] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-01 05:46:03,925:INFO:127.0.0.1 - - [01/Mar/2025 05:46:03] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-27 04:45:32,556:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-03-27 04:45:32,567:INFO:[33mPress CTRL+C to quit[0m
+2025-03-27 04:45:32,570:INFO: * Restarting with stat
+2025-03-27 04:45:36,332:WARNING: * Debugger is active!
+2025-03-27 04:45:36,342:INFO: * Debugger PIN: 139-136-677
+2025-03-27 05:01:57,534:INFO:127.0.0.1 - - [27/Mar/2025 05:01:57] "GET / HTTP/1.1" 200 -
+2025-03-27 05:01:57,961:INFO:127.0.0.1 - - [27/Mar/2025 05:01:57] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-03-27 05:01:57,966:INFO:127.0.0.1 - - [27/Mar/2025 05:01:57] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:01:57,976:INFO:127.0.0.1 - - [27/Mar/2025 05:01:57] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:01:57,993:INFO:127.0.0.1 - - [27/Mar/2025 05:01:57] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:01:58,042:INFO:127.0.0.1 - - [27/Mar/2025 05:01:58] "[36mGET /static/js/tasks.js HTTP/1.1[0m" 304 -
+2025-03-27 05:01:58,065:INFO:127.0.0.1 - - [27/Mar/2025 05:01:58] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-27 05:01:58,374:INFO:127.0.0.1 - - [27/Mar/2025 05:01:58] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 05:01:58,402:INFO:127.0.0.1 - - [27/Mar/2025 05:01:58] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-03-27 05:01:58,684:INFO:127.0.0.1 - - [27/Mar/2025 05:01:58] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 05:02:05,911:INFO:127.0.0.1 - - [27/Mar/2025 05:02:05] "GET /static/images/icon.png HTTP/1.1" 200 -
+2025-03-27 05:02:07,157:INFO:127.0.0.1 - - [27/Mar/2025 05:02:07] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-27 05:02:15,145:INFO:127.0.0.1 - - [27/Mar/2025 05:02:15] "GET /get_task/1 HTTP/1.1" 200 -
+2025-03-27 05:02:24,939:INFO:127.0.0.1 - - [27/Mar/2025 05:02:24] "[33mPOST /delete_task/2 HTTP/1.1[0m" 404 -
+2025-03-27 05:06:05,908:INFO:127.0.0.1 - - [27/Mar/2025 05:06:05] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-03-27 05:07:25,225:INFO:127.0.0.1 - - [27/Mar/2025 05:07:25] "GET /get_task/1 HTTP/1.1" 200 -
+2025-03-27 05:07:29,301:INFO:127.0.0.1 - - [27/Mar/2025 05:07:29] "POST /update_task_details/1 HTTP/1.1" 200 -
+2025-03-27 05:07:32,343:INFO:127.0.0.1 - - [27/Mar/2025 05:07:32] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-27 05:07:42,799:INFO:127.0.0.1 - - [27/Mar/2025 05:07:42] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-03-27 05:07:43,114:INFO:127.0.0.1 - - [27/Mar/2025 05:07:43] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:07:43,377:INFO:127.0.0.1 - - [27/Mar/2025 05:07:43] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:07:57,400:INFO:127.0.0.1 - - [27/Mar/2025 05:07:57] "POST /add_task HTTP/1.1" 200 -
+2025-03-27 05:07:57,718:INFO:127.0.0.1 - - [27/Mar/2025 05:07:57] "POST /add_task HTTP/1.1" 200 -
+2025-03-27 05:09:19,595:INFO:127.0.0.1 - - [27/Mar/2025 05:09:19] "[35m[1mPOST /submit_llm HTTP/1.1[0m" 500 -
+2025-03-27 05:09:22,811:INFO:127.0.0.1 - - [27/Mar/2025 05:09:22] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:11:04,124:INFO:127.0.0.1 - - [27/Mar/2025 05:11:04] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:12:12,494:INFO:127.0.0.1 - - [27/Mar/2025 05:12:12] "POST /submit_llm HTTP/1.1" 200 -
+2025-03-27 05:12:44,120:INFO:127.0.0.1 - - [27/Mar/2025 05:12:44] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:12:44,384:INFO:127.0.0.1 - - [27/Mar/2025 05:12:44] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:12:45,816:INFO:127.0.0.1 - - [27/Mar/2025 05:12:45] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:12:46,123:INFO:127.0.0.1 - - [27/Mar/2025 05:12:46] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:16:14,172:INFO:127.0.0.1 - - [27/Mar/2025 05:16:14] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:17:54,158:INFO:127.0.0.1 - - [27/Mar/2025 05:17:54] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:19:35,164:INFO:127.0.0.1 - - [27/Mar/2025 05:19:35] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:21:15,162:INFO:127.0.0.1 - - [27/Mar/2025 05:21:15] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:21:16,861:INFO:127.0.0.1 - - [27/Mar/2025 05:21:16] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:32:22,175:INFO:127.0.0.1 - - [27/Mar/2025 05:32:22] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:34:02,190:INFO:127.0.0.1 - - [27/Mar/2025 05:34:02] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:35:43,186:INFO:127.0.0.1 - - [27/Mar/2025 05:35:43] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:37:23,174:INFO:127.0.0.1 - - [27/Mar/2025 05:37:23] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:37:24,868:INFO:127.0.0.1 - - [27/Mar/2025 05:37:24] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:40:31,296:INFO:127.0.0.1 - - [27/Mar/2025 05:40:31] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:42:11,301:INFO:127.0.0.1 - - [27/Mar/2025 05:42:11] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:43:52,299:INFO:127.0.0.1 - - [27/Mar/2025 05:43:52] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:45:32,302:INFO:127.0.0.1 - - [27/Mar/2025 05:45:32] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:45:33,995:INFO:127.0.0.1 - - [27/Mar/2025 05:45:33] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:46:24,502:INFO:127.0.0.1 - - [27/Mar/2025 05:46:24] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:48:04,497:INFO:127.0.0.1 - - [27/Mar/2025 05:48:04] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:49:45,504:INFO:127.0.0.1 - - [27/Mar/2025 05:49:45] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:51:25,500:INFO:127.0.0.1 - - [27/Mar/2025 05:51:25] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:51:27,190:INFO:127.0.0.1 - - [27/Mar/2025 05:51:27] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:54:18,484:INFO:127.0.0.1 - - [27/Mar/2025 05:54:18] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:55:58,496:INFO:127.0.0.1 - - [27/Mar/2025 05:55:58] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:57:39,486:INFO:127.0.0.1 - - [27/Mar/2025 05:57:39] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:59:19,496:INFO:127.0.0.1 - - [27/Mar/2025 05:59:19] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 05:59:21,192:INFO:127.0.0.1 - - [27/Mar/2025 05:59:21] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:02:47,074:INFO:127.0.0.1 - - [27/Mar/2025 06:02:47] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:04:25,933:INFO:127.0.0.1 - - [27/Mar/2025 06:04:25] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:05:55,421:INFO:127.0.0.1 - - [27/Mar/2025 06:05:55] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-27 06:06:06,634:INFO:127.0.0.1 - - [27/Mar/2025 06:06:06] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:07:46,926:INFO:127.0.0.1 - - [27/Mar/2025 06:07:46] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:07:48,618:INFO:127.0.0.1 - - [27/Mar/2025 06:07:48] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:08:16,952:INFO:127.0.0.1 - - [27/Mar/2025 06:08:16] "GET / HTTP/1.1" 200 -
+2025-03-27 06:08:17,216:INFO:127.0.0.1 - - [27/Mar/2025 06:08:17] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-03-27 06:08:17,323:INFO:127.0.0.1 - - [27/Mar/2025 06:08:17] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-03-27 06:08:17,323:INFO:127.0.0.1 - - [27/Mar/2025 06:08:17] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:08:17,418:INFO:127.0.0.1 - - [27/Mar/2025 06:08:17] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 06:08:17,420:INFO:127.0.0.1 - - [27/Mar/2025 06:08:17] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-27 06:08:17,526:INFO:127.0.0.1 - - [27/Mar/2025 06:08:17] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:08:17,650:INFO:127.0.0.1 - - [27/Mar/2025 06:08:17] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:08:17,661:INFO:127.0.0.1 - - [27/Mar/2025 06:08:17] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 06:08:17,993:INFO:127.0.0.1 - - [27/Mar/2025 06:08:17] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-03-27 06:08:21,700:INFO:127.0.0.1 - - [27/Mar/2025 06:08:21] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-03-27 06:08:22,015:INFO:127.0.0.1 - - [27/Mar/2025 06:08:22] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 06:08:22,404:INFO:127.0.0.1 - - [27/Mar/2025 06:08:22] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 08:22:18,313:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-03-27 08:22:18,313:INFO:[33mPress CTRL+C to quit[0m
+2025-03-27 08:22:18,315:INFO: * Restarting with stat
+2025-03-27 08:22:22,402:WARNING: * Debugger is active!
+2025-03-27 08:22:22,412:INFO: * Debugger PIN: 139-136-677
+2025-03-27 08:31:45,446:INFO:127.0.0.1 - - [27/Mar/2025 08:31:45] "GET / HTTP/1.1" 200 -
+2025-03-27 08:31:45,794:INFO:127.0.0.1 - - [27/Mar/2025 08:31:45] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-03-27 08:31:45,870:INFO:127.0.0.1 - - [27/Mar/2025 08:31:45] "[36mGET /static/js/tasks.js HTTP/1.1[0m" 304 -
+2025-03-27 08:31:45,871:INFO:127.0.0.1 - - [27/Mar/2025 08:31:45] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 08:31:45,912:INFO:127.0.0.1 - - [27/Mar/2025 08:31:45] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 08:31:45,915:INFO:127.0.0.1 - - [27/Mar/2025 08:31:45] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-27 08:31:45,916:INFO:127.0.0.1 - - [27/Mar/2025 08:31:45] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 08:31:46,202:INFO:127.0.0.1 - - [27/Mar/2025 08:31:46] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 08:31:46,207:INFO:127.0.0.1 - - [27/Mar/2025 08:31:46] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 08:31:46,535:INFO:127.0.0.1 - - [27/Mar/2025 08:31:46] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 08:31:46,538:INFO:127.0.0.1 - - [27/Mar/2025 08:31:46] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-03-27 08:32:09,125:INFO:127.0.0.1 - - [27/Mar/2025 08:32:09] "[33mPOST /delete_task/1 HTTP/1.1[0m" 404 -
+2025-03-27 08:37:16,047:INFO: * Detected change in 'F:\\developerfolder\\1_1_time_management_system\\flask_time_management\\app.py', reloading
+2025-03-27 08:37:16,637:INFO: * Restarting with stat
+2025-03-27 08:37:21,222:WARNING: * Debugger is active!
+2025-03-27 08:37:21,234:INFO: * Debugger PIN: 139-136-677
+2025-03-27 08:39:55,294:INFO:127.0.0.1 - - [27/Mar/2025 08:39:55] "GET / HTTP/1.1" 200 -
+2025-03-27 08:39:55,656:INFO:127.0.0.1 - - [27/Mar/2025 08:39:55] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-03-27 08:39:55,658:INFO:127.0.0.1 - - [27/Mar/2025 08:39:55] "GET /static/js/tasks.js HTTP/1.1" 200 -
+2025-03-27 08:39:55,659:INFO:127.0.0.1 - - [27/Mar/2025 08:39:55] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-27 08:39:55,754:INFO:127.0.0.1 - - [27/Mar/2025 08:39:55] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 08:39:55,756:INFO:127.0.0.1 - - [27/Mar/2025 08:39:55] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-27 08:39:55,757:INFO:127.0.0.1 - - [27/Mar/2025 08:39:55] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-27 08:39:56,031:INFO:127.0.0.1 - - [27/Mar/2025 08:39:56] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-27 08:39:56,219:INFO:127.0.0.1 - - [27/Mar/2025 08:39:56] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 08:39:56,542:INFO:127.0.0.1 - - [27/Mar/2025 08:39:56] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-03-27 08:40:04,037:INFO:127.0.0.1 - - [27/Mar/2025 08:40:04] "POST /complete_task/1 HTTP/1.1" 200 -
+2025-03-27 08:40:06,110:INFO:127.0.0.1 - - [27/Mar/2025 08:40:06] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-27 08:40:08,702:INFO:127.0.0.1 - - [27/Mar/2025 08:40:08] "GET / HTTP/1.1" 200 -
+2025-03-27 08:40:09,074:INFO:127.0.0.1 - - [27/Mar/2025 08:40:09] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-03-27 08:40:09,075:INFO:127.0.0.1 - - [27/Mar/2025 08:40:09] "[36mGET /static/js/tasks.js HTTP/1.1[0m" 304 -
+2025-03-27 08:40:09,335:INFO:127.0.0.1 - - [27/Mar/2025 08:40:09] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-27 08:40:09,443:INFO:127.0.0.1 - - [27/Mar/2025 08:40:09] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 08:40:09,444:INFO:127.0.0.1 - - [27/Mar/2025 08:40:09] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-03-27 08:40:09,520:INFO:127.0.0.1 - - [27/Mar/2025 08:40:09] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-27 08:40:36,766:INFO:127.0.0.1 - - [27/Mar/2025 08:40:36] "POST /delete_task/1 HTTP/1.1" 200 -
+2025-03-27 08:40:37,083:INFO:127.0.0.1 - - [27/Mar/2025 08:40:37] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-27 08:41:16,403:INFO:127.0.0.1 - - [27/Mar/2025 08:41:16] "GET /get_task/6 HTTP/1.1" 200 -
+2025-03-27 08:41:26,745:INFO:127.0.0.1 - - [27/Mar/2025 08:41:26] "GET /get_task/6 HTTP/1.1" 200 -
+2025-03-27 08:42:04,102:INFO:127.0.0.1 - - [27/Mar/2025 08:42:04] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-27 10:15:31,410:INFO:127.0.0.1 - - [27/Mar/2025 10:15:31] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-29 05:29:35,295:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4020
+ * Running on http://192.168.178.36:4020
+2025-03-29 05:29:35,322:INFO:[33mPress CTRL+C to quit[0m
+2025-03-29 05:29:35,324:INFO: * Restarting with stat
+2025-03-29 05:29:39,591:WARNING: * Debugger is active!
+2025-03-29 05:29:39,604:INFO: * Debugger PIN: 139-136-677
+2025-03-29 06:03:26,840:INFO:127.0.0.1 - - [29/Mar/2025 06:03:26] "GET / HTTP/1.1" 200 -
+2025-03-29 06:03:27,210:INFO:127.0.0.1 - - [29/Mar/2025 06:03:27] "[36mGET /static/css/tasks.css HTTP/1.1[0m" 304 -
+2025-03-29 06:03:27,344:INFO:127.0.0.1 - - [29/Mar/2025 06:03:27] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:03:27,420:INFO:127.0.0.1 - - [29/Mar/2025 06:03:27] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:03:27,453:INFO:127.0.0.1 - - [29/Mar/2025 06:03:27] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:03:27,582:INFO:127.0.0.1 - - [29/Mar/2025 06:03:27] "[36mGET /static/js/tasks.js HTTP/1.1[0m" 304 -
+2025-03-29 06:03:27,641:INFO:127.0.0.1 - - [29/Mar/2025 06:03:27] "GET /get_tasks HTTP/1.1" 200 -
+2025-03-29 06:03:27,909:INFO:127.0.0.1 - - [29/Mar/2025 06:03:27] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-29 06:03:28,219:INFO:127.0.0.1 - - [29/Mar/2025 06:03:28] "GET /mantra_text HTTP/1.1" 200 -
+2025-03-29 06:03:30,659:INFO:127.0.0.1 - - [29/Mar/2025 06:03:30] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:03:30,759:INFO:127.0.0.1 - - [29/Mar/2025 06:03:30] "[36mGET /static/media/logo-crisp-large.ico HTTP/1.1[0m" 304 -
+2025-03-29 06:04:00,351:INFO:127.0.0.1 - - [29/Mar/2025 06:04:00] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:05:10,664:INFO:127.0.0.1 - - [29/Mar/2025 06:05:10] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:06:51,660:INFO:127.0.0.1 - - [29/Mar/2025 06:06:51] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:08:31,679:INFO:127.0.0.1 - - [29/Mar/2025 06:08:31] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:08:33,371:INFO:127.0.0.1 - - [29/Mar/2025 06:08:33] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:08:35,982:INFO:127.0.0.1 - - [29/Mar/2025 06:08:35] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-29 06:16:10,609:INFO:127.0.0.1 - - [29/Mar/2025 06:16:10] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:17:50,623:INFO:127.0.0.1 - - [29/Mar/2025 06:17:50] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:19:31,616:INFO:127.0.0.1 - - [29/Mar/2025 06:19:31] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:20:11,794:INFO:127.0.0.1 - - [29/Mar/2025 06:20:11] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-29 06:24:14,112:INFO:127.0.0.1 - - [29/Mar/2025 06:24:14] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:24:15,809:INFO:127.0.0.1 - - [29/Mar/2025 06:24:15] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:32:12,175:INFO:127.0.0.1 - - [29/Mar/2025 06:32:12] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:33:52,184:INFO:127.0.0.1 - - [29/Mar/2025 06:33:52] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:35:33,180:INFO:127.0.0.1 - - [29/Mar/2025 06:35:33] "[35m[1mGET /audio/Notification.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:37:13,183:INFO:127.0.0.1 - - [29/Mar/2025 06:37:13] "[35m[1mGET /audio/Gong.wav HTTP/1.1[0m" 206 -
+2025-03-29 06:37:14,871:INFO:127.0.0.1 - - [29/Mar/2025 06:37:14] "[35m[1mGET /audio/Applause.wav HTTP/1.1[0m" 206 -
+2025-03-29 08:26:44,093:INFO:127.0.0.1 - - [29/Mar/2025 08:26:44] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-29 08:27:05,792:INFO:127.0.0.1 - - [29/Mar/2025 08:27:05] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-29 08:53:41,098:INFO:127.0.0.1 - - [29/Mar/2025 08:53:41] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-29 08:54:10,506:INFO:127.0.0.1 - - [29/Mar/2025 08:54:10] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-29 08:54:21,445:INFO:127.0.0.1 - - [29/Mar/2025 08:54:21] "GET /get_task/4 HTTP/1.1" 200 -
+2025-03-29 08:54:28,731:INFO:127.0.0.1 - - [29/Mar/2025 08:54:28] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-29 08:54:34,006:INFO:127.0.0.1 - - [29/Mar/2025 08:54:34] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -
+2025-03-29 09:00:00,106:INFO:127.0.0.1 - - [29/Mar/2025 09:00:00] "[36mGET /static/images/icon.png HTTP/1.1[0m" 304 -

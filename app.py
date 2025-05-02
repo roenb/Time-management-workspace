@@ -211,16 +211,16 @@ transcription_cache = []
 command_cache = []
 
 # Function to check for commands
-def check_for_command(transcribed_text):
-    lower_text = transcribed_text.lower()
+# def check_for_command(transcribed_text):
+#     lower_text = transcribed_text.lower()
 
-    if "start task" in lower_text and "start task" not in command_cache:
-        command_cache.append("start task")
-        return "start_task"
-    elif "stop timer" in lower_text and "stop timer" not in command_cache:
-        command_cache.append("stop timer")
-        return "stop_timer"
-    return None
+#     if "start task" in lower_text and "start task" not in command_cache:
+#         command_cache.append("start task")
+#         return "start_task"
+#     elif "stop timer" in lower_text and "stop timer" not in command_cache:
+#         command_cache.append("stop timer")
+#         return "stop_timer"
+#     return None
 
 # NLP Functions for Sentiment, Keywords, Entities
 def analyze_sentiment(text):
@@ -585,21 +585,16 @@ def stream_llm_response(llm_request_data):
     except requests.RequestException as e:
         yield f"data:Error: {str(e)}\n\n"
 
-@app.route('/delete_task/<task_id>', methods=['POST'])
+@app.route('/delete_task/<int:task_id>', methods=['POST'])
 def delete_task(task_id):
     tasks_data = load_tasks()
-    
-    # Check if the task with the given id exists before deletion
-    task_to_delete = [task for task in tasks_data['tasks'] if task['id'] == task_id]
-    
+    task_to_delete = [task for task in tasks_data['tasks'] if task['id'] == task_id]  # task['id'] must also be an int
     if not task_to_delete:
         return jsonify({"message": "Task not found"}), 404
-    
-    # Filter out the task to delete
     tasks_data['tasks'] = [task for task in tasks_data['tasks'] if task['id'] != task_id]
-    
     save_tasks(tasks_data)
     return jsonify({"message": "Task deleted successfully"}), 200
+
 
 
 # Route to submit LLM request and handle streaming or non-streaming responses
@@ -758,5 +753,5 @@ def get_llm_response(llm_request_data):
         return f'Error: {str(e)}'
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=4020)
 

@@ -7,3 +7,5 @@ saved_audio/
 /venv/Lib
 venv/Scripts/numpy-config.exe
 venv/Scripts/f2py.exe
+/time_mgmt_venv
+/venv
